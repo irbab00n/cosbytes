@@ -185,6 +185,7 @@ $main-track-max-width: 980px;
     position: relative;
     height: 100px;
     overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
     min-width: 100%;
 
     & > .inner-wrapper {
