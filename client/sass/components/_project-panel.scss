@@ -30,10 +30,9 @@ $project-pictures-height: 500px;
 /* STACK TECH LABEL */
 ul.project-tech-wrapper {
   @include flex; @include align-center;
-  box-shadow: inset 0px 0px 10px $blue-grey-900;
-  background-color: $blue-grey-500;
+  // box-shadow: inset 0px 0px 10px $blue-grey-900;
+  // background-color: $blue-grey-500;
   border-radius: 4px;
-  height: 48px;
   list-style: none;
   padding: 0 0 0 20px;
 }
@@ -104,7 +103,6 @@ ul.project-tech-wrapper > li {
 /* CONTRIBUTORS */
 .project-contributors-wrapper {
   @include flex; @include flex-column;
-  margin-left: 10px;
 
   & > h4 {
     font-size: 24px;
@@ -193,7 +191,7 @@ ul.project-tech-wrapper > li {
 
 @media (max-width: 1440px) {
   .project-title-wrapper {
-    height: 120px;
+    height: 150px;
   }
 }
 
@@ -220,7 +218,7 @@ ul.project-tech-wrapper > li {
   }
   
   .project-contributors-wrapper {
-    padding: 20px 0;
+    padding: 40px 0;
   }
   
   .project-description-wrapper {

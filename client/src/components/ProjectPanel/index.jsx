@@ -151,7 +151,7 @@ export default class ProjectPanel extends React.Component {
       <section className={`main-track ${showContent ? 'show' : ''}`}>
       
         <div className="inner-wrapper no-padding">
-          <div className={`project-title-wrapper ${isPortrait ? 'col' : ''}`}>
+          <div className={`project-title-wrapper ${isMobile ? 'col' : ''}`}>
             <h1>{project.title}</h1>
             <ul className="project-tech-wrapper">
               {
