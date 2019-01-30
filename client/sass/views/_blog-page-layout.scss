@@ -40,6 +40,29 @@ $blog-bottom-spacer-height: 75px;
   margin: 0 auto;
 }
 
+/* BLOG HOME NAV WRAPPER */
+.blog-home-nav-wrapper {
+  margin-top: 20px !important;
+}
+/* BLOG HOME NAV LINK */
+.blog-home-nav-wrapper > a {
+  @include transition(0.2s);
+  font-size: 18px; font-weight: bolder;
+  text-decoration: none;
+
+  &:hover {
+    color: $amber-900;
+  }
+
+  &:active {
+    color: $blue-grey-900;
+  }
+
+  &:visted {
+    color: $indigo-500;
+  }
+}
+
 /* BLOG TITLE WRAPPER */
 .blog-title-wrapper {
   // background-color: $blue-grey-200;
@@ -52,7 +75,8 @@ $blog-bottom-spacer-height: 75px;
 
   & > h1 {
     font-size: 56px;
-    margin-bottom: 0px
+    margin-bottom: 0px;
+    margin-top: 30px;
   }
   & > h2 {
     font-size: 48px;
@@ -105,6 +129,23 @@ $blog-bottom-spacer-height: 75px;
 .filter-breadcrumb-wrapper > span {
   margin: 0 10px;
 }
+.filter-breadcrumb-wrapper > a {
+  @include transition(0.2s);
+  font-size: 20px; font-weight: bolder;
+  text-decoration: none;
+
+  &:hover {
+    color: $amber-900;
+  }
+
+  &:active {
+    color: $blue-grey-900;
+  }
+
+  &:visted {
+    color: $indigo-500;
+  }
+}
 
 /* BLOG CONTENT WRAPPER */
 .blog-content-wrapper {
@@ -148,8 +189,11 @@ $blog-bottom-spacer-height: 75px;
 }
 /* BLOG MAIN TRACK IMAGE CONTAINER */
 #blog-main-track > figure {
+  @include box-shadow(1px, 1px, 4px, 0px, rgba(25, 25, 25, 0.2));
+  background-color: $blue-grey-50;
+  border-radius: 2.5px;
   width: $blog-main-track-image-width;
-  margin: 0 $blog-main-track-margin;
+  margin: 0 $blog-main-track-margin 20px $blog-main-track-margin;
 }
 /* BLOG MAIN TRACK PARAGRAPH */
 #blog-main-track > p {
@@ -158,9 +202,11 @@ $blog-bottom-spacer-height: 75px;
   line-height: 1.3;
   font-size: 18px; letter-spacing: 0.3px;
 }
-/* BLOG MAIN TRACK IMAGE */
-#blog-main-track > figure {
-  margin-bottom: 20px;
+/* BLOG MAIN TRACK IMAGE SUBTITLE */
+#blog-main-track > figure > figcaption {
+  margin: $blog-main-track-margin $blog-main-track-margin $blog-main-track-margin 12px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 600;
 }
 #blog-main-track > p > img, #blog-main-track > figure > img {
   width: $blog-main-track-image-width;
@@ -180,10 +226,6 @@ $blog-bottom-spacer-height: 75px;
   &:first-child {
     margin-top: 0px;
   }
-}
-
-/* BLOG SIDE TRACK INNER WRAPPER */
-#blog-side-track > .inner-wrapper {
 }
 
 /* BLOG BOTTOM SPACER */

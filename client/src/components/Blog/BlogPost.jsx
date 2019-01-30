@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 /* REDUX */
 import { connect } from 'react-redux';
 import dispatchMappedActions from '../../redux/dispatchMappedActions';
@@ -15,20 +16,20 @@ class BlogPost extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loaded: false,
-      lockSidebar: true
+      loaded: false
     };
-    this.toggleSidebarLock = this.toggleSidebarLock.bind(this);
   }
 
+  /**
+   * Extract the post slug out of the React Router match params and pass fetch the post
+   */
   componentWillMount() {
     const { slug } = this.props.match.params;
-
     this.props.actions.retrieveBlogPostFromSlug(slug);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    const { loaded } = nextState;
+    const { loaded } = nextState; /* Used to prevent infinite updating loop when posts are finished fetching */
     const { currentPost } = nextProps.views.blog;
     let updatedState = {};
 
@@ -52,14 +53,8 @@ class BlogPost extends Component {
     return true;
   }
 
-  toggleSidebarLock() {
-    this.setState({
-      lockSidebar: !this.state.lockSidebar
-    });
-  }
-
   render() {
-    const { loaded, lockSidebar } = this.state;
+    const { loaded } = this.state;
     const { post } = this.props.views.blog.currentPost;
 
     let postInState = Object.keys(post).length > 0;
@@ -68,6 +63,11 @@ class BlogPost extends Component {
 
       return (
         <section id="blog-list" className="blog-view-wrapper">
+
+          {/* Back Button to Blog Home */}
+          <div id="blog-title" className="inner-wrapper blog-home-nav-wrapper">
+            <Link to="/blog">Back to Blog Home</Link>
+          </div>
 
           <div id="blog-title" className="inner-wrapper blog-title-wrapper">
             <Helmet>
@@ -92,7 +92,7 @@ class BlogPost extends Component {
                 <div className="date">{`Posted ${new Date(post.data.published).toDateString()}`}</div>
               </div>
             </div>
-            <div />
+            <div />{/* SOCIAL SHARE BLOCK */}
           </div>
 
           <div id="blog-content" className="inner-wrapper blog-content-wrapper">
@@ -101,10 +101,7 @@ class BlogPost extends Component {
             />
 
             {/* SIDE TRACK WILL BE MANAGED SEPERATELY */}
-            <BlogSideTrack
-              lockSidebar={lockSidebar}
-              toggleSidebarLock={this.toggleSidebarLock}
-            />
+            <BlogSideTrack />
           </div>
 
           <div className="blog-bottom-spacer"/>

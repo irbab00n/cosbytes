@@ -96,7 +96,7 @@ class BlogList extends React.Component {
 
     return (
       <div className="filter-breadcrumb-wrapper">
-        <h4>{filterType}</h4><span>{String.fromCharCode(10095)}</span><h4>{filterName}</h4>
+        <Link to="/blog">Blog</Link><span>{String.fromCharCode(10095)}</span><h4>{filterType}</h4><span>{String.fromCharCode(10095)}</span><h4>{filterName}</h4>
       </div>
     );
   }

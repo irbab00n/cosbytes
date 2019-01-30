@@ -40,7 +40,7 @@ class Categories extends React.Component {
     return (
 
       <div className="inner-wrapper categories-wrapper">
-        <h4>See Posts From Category</h4>
+        <h4>See Posts From</h4>
         <div className="dropdown-wrapper">
           <div className="selection-arrow-wrapper" onClick={this.toggleShowList}>
             <span className="label">Category</span>

@@ -40,7 +40,7 @@ class Tags extends React.Component {
     return (
 
       <div className="inner-wrapper tags-wrapper">
-        <h4>See Posts Tagged With</h4>
+        {/* <h4>See Posts Tagged With</h4> */}
         <div className="dropdown-wrapper">
           <div className="selection-arrow-wrapper" onClick={this.toggleShowList}>
             <span className="label">Tag</span>

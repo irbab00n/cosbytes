@@ -52,6 +52,7 @@
   @include transition(0.2s);
   @include flex; @include align-center; @include justify-between;
   background-color: $javascript-yellow;
+  height: 40px;
   padding: 6px;
 
   &:active { background-color: $amber-500; }
@@ -84,7 +85,7 @@
 .tags-wrapper > .dropdown-wrapper > ul > li {
   @include transition(0.2s);
   @include flex; @include align-center;
-  height: 30px;
+  height: 40px;
   padding: 0 6px;
 
   &:hover {
@@ -95,4 +96,7 @@
 .tags-wrapper > .dropdown-wrapper > ul > li > a {
   @include flex; @include align-center;
   height: 100%; width: 100%;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  text-decoration: none;
 }
