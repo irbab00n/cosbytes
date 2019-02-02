@@ -1,4 +1,26 @@
 module.exports = [
+   /* ----- COSBYTES ----- */
+   {
+     pictures: [
+       {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/redoku/redoku.png', description: 'Home landing page progress so far'},
+       {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/redoku/redoku-progress-1.png', description: 'Puzzles are being fetched, formatted and displayed'}
+     ],
+     title: 'redoku',
+     link: 'https://app.redoku.rocks',
+     repo: 'https://github.com/irbab00n/redoku',
+     contributors: ['Thomas Cosby'],
+     stack: [
+       'React',
+       'Redux',
+       'Node',
+       'Express',
+       'Sass',
+       'Webpack',
+       'Heroku'
+     ],
+     description: 'Redoku is my React-Redux implementation of one of my favorite quick-puzzle games.  This is an on-going project aimed at designing simple, responsive interface that I will connect into a custom score tracking back-end to deliver support for leaderboard like data tracking.',
+     overview: 'This website has served as not only a display center for who I am, but also what I am capable of as a software engineer'
+   },
   /* ----- COSBYTES ----- */
   {
     pictures: [
@@ -20,7 +42,7 @@ module.exports = [
       'Webpack',
       'Heroku'
     ],
-    description: 'Everything that you have seen so far has been composed of components I have created myself.  As a labor of love, my portfolio has been one of the best resources for my continually developing front-end skills.  I have combined the most popular JS front-end framework, React, with a technique known as CSS-in-JS to create a highly interactive and performant user experience.  It is packed full of unique features, inluding a custom built simulated scrolling navigation.  This project has inspired me to create a CSS-in-JS animation builder for React!',
+    description: 'My portfolio application has served as a time capsule of my skill set.  Started during my time as a student at Hack reactor, this application has grown from a simple React application using CSS-in-JS, to a full-stack JavaScript application featuring SASS styling, React Routing for pagination, a fully-custom blog using Butter CMS for content management and CDN support.',
     overview: 'This website has served as not only a display center for who I am, but also what I am capable of as a software engineer'
   },
   /* ----- NOTE-APP ----- */
