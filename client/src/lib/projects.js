@@ -2,7 +2,6 @@ module.exports = [
    /* ----- COSBYTES ----- */
    {
      pictures: [
-       {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/redoku/redoku.png', description: 'Home landing page progress so far'},
        {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/redoku/redoku-progress-1.png', description: 'Puzzles are being fetched, formatted and displayed'}
      ],
      title: 'redoku',
