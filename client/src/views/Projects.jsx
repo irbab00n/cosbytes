@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import ProjectsList from '../components/ProjectsList/';
 import ProjectPanel from '../components/ProjectPanel/';
@@ -37,6 +38,9 @@ export default class Projects extends React.Component {
     
     return (
       <main className="projects-page-layout">
+        <Helmet>
+          <title>cosbytes | Projects</title>
+        </Helmet>
         <ProjectsList 
           currentIndex={currentIndex}
           projects={projects}

@@ -1,32 +1,47 @@
 module.exports = [
-   /* ----- COSBYTES ----- */
-   {
-     pictures: [
-       {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/redoku/redoku-progress-1.png', description: 'Puzzles are being fetched, formatted and displayed'}
-     ],
-     title: 'redoku',
-     link: 'https://app.redoku.rocks',
-     repo: 'https://github.com/irbab00n/redoku',
-     contributors: ['Thomas Cosby'],
-     stack: [
-       'React',
-       'Redux',
-       'Node',
-       'Express',
-       'Sass',
-       'Webpack',
-       'Heroku'
-     ],
-     description: 'Redoku is my React-Redux implementation of one of my favorite quick-puzzle games.  This is an on-going project aimed at designing simple, responsive interface that I will connect into a custom score tracking back-end to deliver support for leaderboard like data tracking.',
-     overview: 'This website has served as not only a display center for who I am, but also what I am capable of as a software engineer'
-   },
+   /* ----- REDOKU ----- */
+  {
+    pictures: [
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/redoku/redoku-progress-1_1920.png', description: 'Puzzles are being fetched, formatted and displayed'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/redoku/redoku-progress-2_1920.png', description: 'Your always against the clock.  Try to get the lowest time you can!'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/redoku/redoku-progress-3_1920.png', description: 'So close!'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/redoku/redoku-progress-4_1920.png', description: 'Winner winner, chicken dinner!'},
+    ],
+    thumbnails: [
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/redoku/redoku-progress-1_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/redoku/redoku-progress-2_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/redoku/redoku-progress-3_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/redoku/redoku-progress-4_thumb.png'},
+    ],
+    title: 'redoku',
+    link: 'https://app.redoku.rocks',
+    repo: 'https://github.com/irbab00n/redoku',
+    contributors: ['Thomas Cosby'],
+    stack: [
+      'React',
+      'Redux',
+      'Node',
+      'Express',
+      'Sass',
+      'Webpack',
+      'Heroku'
+    ],
+    description: 'Redoku is my React-Redux implementation of one of my favorite quick-puzzle games.  This is an on-going project aimed at designing simple, responsive interface that I will connect into a custom score tracking back-end to deliver support for leaderboard like data tracking.',
+    overview: 'This website has served as not only a display center for who I am, but also what I am capable of as a software engineer'
+  },
   /* ----- COSBYTES ----- */
   {
     pictures: [
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/cosbytes/cosbytes-large.png', description: 'Main home page containing custom-built jumbotron and sliding carousel components'},
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/cosbytes/cosbytes-main-skills-2.png', description: 'Sliding components and changing animated jumbotron slides show off the skills'},
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/cosbytes/cosbytes-projects.png', description: 'A project list inside of a project? Project-ception'},
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/cosbytes/cosbytes-blog-layout.png', description: 'A custom-built Blog using ButterCMS for content management and React Router'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/cosbytes/cosbytes-large_1920.png', description: 'Main home page containing custom-built jumbotron and sliding carousel components'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/cosbytes/cosbytes-main-skills-2_1920.png', description: 'Sliding components and changing animated jumbotron slides show off the skills'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/cosbytes/cosbytes-projects_1920.png', description: 'A project list inside of a project? Project-ception'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/cosbytes/cosbytes-blog-layout_1920.png', description: 'A custom-built Blog using ButterCMS for content management and React Router'},
+    ],
+    thumbnails: [
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/cosbytes/cosbytes-large_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/cosbytes/cosbytes-main-skills-2_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/cosbytes/cosbytes-projects_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/cosbytes/cosbytes-blog-layout_thumb.png'}
     ],
     title: 'cosbytes.com',
     link: 'https://www.cosbytes.com',
@@ -47,11 +62,18 @@ module.exports = [
   /* ----- NOTE-APP ----- */
   {
     pictures: [
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/note-app_home.jpg', description: 'The Note-app!  This allows you to create small convenient colorized tab notes!'},
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/note-app_add.jpg', description: 'Add a new note!'},
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/note-app_edit.jpg', description: 'If you make a mistake, no sweat! Go back and edit the note!'},
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/note-app_delete_hover.jpg', description: 'Last but not least, if you want to delete a note'},
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/note-app_delete.jpg', description: 'We want to make sure you\'re serious before you do'}
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/note-app/note-app_home_1920.png', description: 'The Note-app!  This allows you to create small convenient colorized tab notes!'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/note-app/note-app_add_1920.png', description: 'Add a new note!'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/note-app/note-app_edit_1920.png', description: 'If you make a mistake, no sweat! Go back and edit the note!'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/note-app/note-app_delete_hover_1920.png', description: 'Last but not least, if you want to delete a note'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/note-app/note-app_delete_1920.png', description: 'We want to make sure you\'re serious before you do'}
+    ],
+    thumbnails: [
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/note-app/note-app_home_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/note-app/note-app_add_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/note-app/note-app_edit_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/note-app/note-app_delete_hover_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/note-app/note-app_delete_thumb.png'}
     ],
     title: 'Note-app',
     link: 'http://note-app-tc.herokuapp.com',
@@ -70,9 +92,14 @@ module.exports = [
   /* ----- TRAINERFINDER ----- */
   {
     pictures: [
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/trainerFinder_search.jpg', description: 'This is the main search page for the application.  Guests and Trainees alike could browse trainers'},   
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/trainerFinder_profile.jpg', description: 'This is the view of a trainers profile from the perspective of a guest'},
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/trainerFinder_signup.jpg', description: 'Our application featured a multi-tier user system that was determined by how a user signed up at this stage'}   
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/trainerfinder/trainerFinder_search_1920.png', description: 'This is the main search page for the application.  Guests and Trainees alike could browse trainers'},   
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/trainerfinder/trainerFinder_profile_1920.png', description: 'This is the view of a trainers profile from the perspective of a guest'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/trainerfinder/trainerFinder_signup_1920.png', description: 'Our application featured a multi-tier user system that was determined by how a user signed up at this stage'}   
+    ],
+    thumbnails: [
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/trainerfinder/trainerFinder_search_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/trainerfinder/trainerFinder_profile_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/trainerfinder/trainerFinder_signup_thumb.png'}
     ],
     title: 'TrainerFinder',
     link: 'http://trainerfinder.herokuapp.com',
@@ -93,9 +120,14 @@ module.exports = [
   /* ----- VAGABONDLY ----- */
   {
     pictures: [
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/vagabondly_fleshed.jpg', description: 'Travel information provided via the Yelp Search API'},
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/vagabondly_google_maps.jpg', description: 'View attractions either by list view, or Google Maps'},
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/vagabondly_trips.jpg', description: 'Once you created a trip, you could view a list of all the trips you created and can go back and edit any of them'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/vagabondly/vagabondly_fleshed.png', description: 'Travel information provided via the Yelp Search API'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/vagabondly/vagabondly_google_maps.png', description: 'View attractions either by list view, or Google Maps'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/vagabondly/vagabondly_trips.png', description: 'Once you created a trip, you could view a list of all the trips you created and can go back and edit any of them'},
+    ],
+    thumbnails: [
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/vagabondly/vagabondly_fleshed_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/vagabondly/vagabondly_google_maps_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/vagabondly/vagabondly_trips_thumb.png'}
     ],
     title: 'Vagabondly',
     link: 'http://vagabondly-staging.herokuapp.com/',
@@ -115,8 +147,12 @@ module.exports = [
   /* ----- SCHEGGIE ----- */
   {
     pictures: [
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/scheggie/scheggie.png', description: 'Find your new favorite vegetarian recipes and save them into your planner!'},
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/scheggie/scheggie-favorites.png', description: 'Create a list of your favorites so you don\'t lose them'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/scheggie/scheggie_1920.png', description: 'Find your new favorite vegetarian recipes and save them into your planner!'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/scheggie/scheggie-favorites_1920.png', description: 'Create a list of your favorites so you don\'t lose them'},
+    ],
+    thumbnails: [
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/scheggie/scheggie_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/scheggie/scheggie-favorites_thumb.png'}
     ],
     title: 'Scheggie',
     link: 'https://scheggie-staging.herokuapp.com/',
@@ -137,7 +173,10 @@ module.exports = [
   /* ----- DROPSHIPPIT ----- */
   {
     pictures: [
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/dropShippit.png', description: 'A provided search term would compare search results from both Dollar Tree and Amazon'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/dropshippit/dropShippit.png', description: 'A provided search term would compare search results from both Dollar Tree and Amazon'},
+    ],
+    thumbnails: [
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/dropshippit/dropShippit_thumb.png'}
     ],
     title: 'DropShippit',
     link: '',
@@ -156,8 +195,12 @@ module.exports = [
   /* ----- JQUERY DANCE PARTY ----- */
   {
     pictures: [
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/jquery-dance-party/jquery-dance-party.png', description: 'Re-creating one of my favorite scenese from Night at the Roxbury using jQuery'},
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/jquery-dance-party/jquery-dance-party-crazy.png', description: 'Sometimes a dance party can get a little out of hand'}
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/jquery-dance-party/jquery-dance-party_1920.png', description: 'Re-creating one of my favorite scenese from Night at the Roxbury using jQuery'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/jquery-dance-party/jquery-dance-party-crazy_1920.png', description: 'Sometimes a dance party can get a little out of hand'}
+    ],
+    thumbnails: [
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/jquery-dance-party/jquery-dance-party_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/jquery-dance-party/jquery-dance-party-crazy_thumb.png'}
     ],
     title: 'jQuery Dance Party',
     link: 'https://jquery-dance-party.herokuapp.com/',
@@ -174,10 +217,16 @@ module.exports = [
   /* ----- PARTICLES ----- */
   {
     pictures: [
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/particles-app_home.jpg', description: 'The Particles.js library allows you to create any sized container you would like to populate with floating particles.'},
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/particles-app_section.jpg', description: 'Using viewport dimensions for content containers allows the content to adapt to every kind of screen size'},
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/particles-app_mobile.jpg', description: 'All mobile responsiveness is a combination of framework agnostic JavaScript paired with strategic usage of CSS classes to create a more alive experience'},
-      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/particles-app_mobile_menu.jpg', description: 'One of the coolest features I have created for this application is the dynamic simulated scrolling navigation targets that responds to the number of content sections'}
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/particles/particles-app_home_1920.png', description: 'The Particles.js library allows you to create any sized container you would like to populate with floating particles.'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/particles/particles-app_section_1920.png', description: 'Using viewport dimensions for content containers allows the content to adapt to every kind of screen size'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/particles/particles-app_mobile_1920.png', description: 'All mobile responsiveness is a combination of framework agnostic JavaScript paired with strategic usage of CSS classes to create a more alive experience'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/particles/particles-app_mobile_menu_1920.png', description: 'One of the coolest features I have created for this application is the dynamic simulated scrolling navigation targets that responds to the number of content sections'}
+    ],
+    thumbnails: [
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/particles/particles-app_home_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/particles/particles-app_section_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/particles/particles-app_mobile_thumb.png'},
+      {link: 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/particles/particles-app_mobile_menu_thumb.png'}
     ],
     title: 'Particles',
     link: 'http://particles-app-tc.herokuapp.com',

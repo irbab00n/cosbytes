@@ -33,9 +33,9 @@ export default class ProjectsListItem extends React.Component {
   // Logic for incrementing the index
   incrementImageIndex() {
     let { imageIndex } = this.state;
-    let pictureLength = this.props.project.pictures.length;
+    let pictureLength = this.props.project.thumbnails.length;
     let nextIndex = imageIndex + 1;  // default: increment by 1
-    // if the nextIndex is the length of the pictures array
+    // if the nextIndex is the length of the thumbnails array
     if (nextIndex === pictureLength) {
       // set the next Index back to 0
       nextIndex = 0;
@@ -70,7 +70,7 @@ export default class ProjectsListItem extends React.Component {
           <div className="list-item-image-wrapper">
             <div className="image" style={
               {
-                background: `url(${project.pictures[imageIndex].link})`
+                background: `url(${project.thumbnails[imageIndex].link})`
               }
             }/>
           </div>
