@@ -114,7 +114,7 @@ export default class Jumbotron extends React.Component {
     return (
       <section className={`jumbotron-wrapper ${this.setBackgroundColor(currentIndex)}`}>
         <div className="jumbotron-background-video">
-          <video id="video" style={{height: '100%', width: '100%', objectFit: 'fill'}} autoPlay loop>
+          <video id="video" style={{height: '100%', width: '100%', objectFit: 'fill'}} autoPlay muted loop>
             <source src={videoLink} type="video/mp4" />
           </video>
         </div>
