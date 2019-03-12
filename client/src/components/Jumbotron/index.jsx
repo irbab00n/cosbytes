@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import JumbotronSlide from './JumbotronSlide';
 import SlideSelectorList from './SlideSelectorList';
 
+import getRandomIndexFromRange from '../../lib/helpers/getRandomIndexFromRange';
+
 const slides = [
   {
     feature: (show) => (
@@ -25,7 +27,7 @@ const slides = [
     ),
     subtitle: 'See what I\'ve been working on',
     title: 'My Projects',
-    textWhite: false
+    textWhite: true
   },
   {
     feature: (show) => (
@@ -35,9 +37,15 @@ const slides = [
     ),
     subtitle: 'See what\'s been on my mind',
     title: 'My blog',
-    textWhite: false
+    textWhite: true
   }
 ];
+
+const videos = [
+  'https://s3-us-west-1.amazonaws.com/cos-bytes.com/beach.mp4',
+  'https://s3-us-west-1.amazonaws.com/cos-bytes.com/sea-cliffs.mp4',
+  'https://s3-us-west-1.amazonaws.com/cos-bytes.com/rock-cliffs.mp4'
+]
 
 export default class Jumbotron extends React.Component {
   constructor(props) {
@@ -101,9 +109,15 @@ export default class Jumbotron extends React.Component {
         2. Extract the slides from the props
     */
     let formattedSlides = this.formatSlides(currentIndex, fadeOut);
+    let videoLink = videos[getRandomIndexFromRange(0, videos.length - 1)];
 
     return (
       <section className={`jumbotron-wrapper ${this.setBackgroundColor(currentIndex)}`}>
+        <div className="jumbotron-background-video">
+          <video id="video" style={{height: '100%', width: '100%', objectFit: 'fill'}} autoPlay loop>
+            <source src={videoLink} type="video/mp4" />
+          </video>
+        </div>
         <div className="jumbotron-inner-wrapper">
           {
             formattedSlides[currentIndex]

@@ -107,6 +107,7 @@ $jumbotron-slide-selector-margin: 12px;
   @include jumbotron-background;
   @include box-shadow(0px, $jumbotron-shadow-veritical, $jumbotron-shadow-blur, 0px, $jumbotron-shadow-color);
   height: $jumbotron-height-full; width: $jumbotron-width;
+  position: relative;
 
   &.default-bg {
     // background-color: #498cb6;
@@ -133,12 +134,22 @@ $jumbotron-slide-selector-margin: 12px;
 }
 .jumbotron-inner-wrapper > .bottom-container {
   height: $jumbotron-inner-wrapper-bottom-container-height-full; width: 100%;
+  z-index: 3;
+}
+
+.jumbotron-background-video {
+  position: absolute;
+  object-fit: contain;
+  width: 100%; height: 100%;
+  opacity: 0.8;
+  z-index: 1;
 }
 
 /* JUMBOTRON SLIDE WRAPPER */
 .jumbotron-slide-wrapper {
   @include flex; @include flex-column; @include align-center; @include justify-center;
   height: $jumbotron-slide-height-full; width: 100%;
+  z-index: 3;
 
   &.text-white > * {
     color: white !important;
@@ -265,16 +276,16 @@ $jumbotron-slide-selector-margin: 12px;
   cursor: pointer;
   border: 0px;
   border-radius: 50%;
-  background-color: rgba(155, 155, 155, 0.2);
+  background-color: rgba(155, 155, 155, 0.4);
   height: 48px; width: 48px;
   padding: 0 10px;
 
   &:hover {
-    background-color: rgba(135, 159, 165, 0.3);
+    background-color: rgba(135, 159, 165, 0.6);
   }
 
   &:active {
-    background-color: rgba(132, 163, 175, 0.7);
+    background-color: rgba(132, 163, 175, 0.9);
   }
   
   &:focus {
