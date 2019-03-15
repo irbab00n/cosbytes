@@ -111,14 +111,16 @@ $jumbotron-slide-selector-margin: 12px;
 
   &.default-bg {
     // background-color: #498cb6;
-    background-color: #0F6DB4;
+    // background-color: #0F6DB4; warrior blue
+    background-color: rgb(97, 145, 233);
+
   }
   &.green-bg {
     // background-color: #498cb6;
-    background-color: rgb(176, 183, 79);
+    background-color: rgb(227, 230, 187);
   }
   &.orange-bg {
-    background-color: #EE6534;
+    background-color: rgb(241, 152, 120);
   }
   &.purple-bg {
     background-color: #686EBE;
@@ -150,6 +152,8 @@ $jumbotron-slide-selector-margin: 12px;
   @include flex; @include flex-column; @include align-center; @include justify-center;
   height: $jumbotron-slide-height-full; width: 100%;
   z-index: 3;
+  line-height: 1;
+  text-align: center;
 
   &.text-white > * {
     color: white !important;
@@ -300,6 +304,12 @@ $jumbotron-slide-selector-margin: 12px;
   margin: 0 250px;
   max-width: 500px;
   overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: transparent;
+  }
 }
 .slide-selector-wrapper > ul > li {
   display: inline-block;
@@ -469,7 +479,13 @@ $jumbotron-slide-selector-margin: 12px;
 
 /* Viewport, right after iPad */
 @media (max-width: 1023px) {
+  .jumbotron-wrapper {
+    height: 400px;
+  }
 
+  .jumbotron-inner-wrapper {
+    height: 400px;
+  }
 }
 
 /* iPad Portrait */
@@ -484,6 +500,22 @@ $jumbotron-slide-selector-margin: 12px;
 
 /* Mobile XL Portrait */
 @media (max-width: 425px) {
+  .jumbotron-wrapper {
+    height: 350px;
+  }
+
+  .jumbotron-inner-wrapper {
+    height: 350px;
+  }
+
+  .jumbotron-slide-wrapper {
+    height: 300px;
+  }
+
+  .slide-selector-wrapper > ul {
+    margin: 0;
+  }
+
   /* -- JUMBOTRON SLIDE TITLES */
   .jumbotron-slide-wrapper > h1 {
     font-size: $jumbotron-slide-title-h1-size-mobile;

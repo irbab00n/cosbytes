@@ -1,4 +1,5 @@
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 
 export default class SlideSelectorList extends React.Component {
   constructor(props) {
@@ -43,17 +44,25 @@ export default class SlideSelectorList extends React.Component {
 
     return (
       <div className="bottom-container slide-selector-wrapper">
-        <button onClick={() => this.handleIndexUpdate('decrement')}>
-          {String.fromCharCode(10094)}
-        </button>
+        {
+          isMobile ?
+            null :
+            <button onClick={() => this.handleIndexUpdate('decrement')}>
+              {String.fromCharCode(10094)}
+            </button>
+        }
         <ul>
           {
             this.buildListItems()
           }
         </ul>
-        <button onClick={() => this.handleIndexUpdate('increment')}>
+        {
+          isMobile ?
+            null :
+            <button onClick={() => this.handleIndexUpdate('increment')}>
           {String.fromCharCode(10095)}
         </button>
+        }
       </div>
     );
 

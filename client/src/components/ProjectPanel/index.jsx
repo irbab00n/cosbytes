@@ -135,6 +135,7 @@ export default class ProjectPanel extends React.Component {
       <Carousel
         showThumbs={false}
         width={width}
+        className='project-image-carousel'
       >
         {
           this.buildImageCarouselElements(pictures)
@@ -146,10 +147,11 @@ export default class ProjectPanel extends React.Component {
   render() {
     const { isPortrait, showContent } = this.state;
     const { project } = this.props;
+
+    let videoLink = 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/project-background.mp4';
     
     return (
-      <section className={`main-track ${showContent ? 'show' : ''}`}>
-      
+      <section className={`main-track project-panel ${showContent ? 'show' : ''}`}>
         <div className="inner-wrapper no-padding">
           <div className={`project-title-wrapper ${isMobile ? 'col' : ''}`}>
             <h1>{project.title}</h1>
@@ -161,11 +163,14 @@ export default class ProjectPanel extends React.Component {
           </div>
         </div>
 
-        <div className="inner-wrapper full-width jcc dark-bg box-shadow no-padding">
+        <div className="inner-wrapper project-panel full-width jcc dark-bg box-shadow no-padding">
+          <div className="project-panel-background-video">
+            <video id="video" style={{height: '100%', width: '100%', objectFit: 'fill'}} autoPlay muted loop>
+              <source src={videoLink} type="video/mp4" />
+            </video>
+          </div>
           {this.renderCarousel(project.pictures)}
         </div>
-
-       
 
         <div className="inner-wrapper no-padding top-spacer">
           <div className="project-split-wrapper">
