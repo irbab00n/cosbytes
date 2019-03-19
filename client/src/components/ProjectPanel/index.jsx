@@ -5,6 +5,8 @@ import { isMobile } from 'react-device-detect';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
+import ImageCarousel from '../ImageCarousel';
+
 import Footer from '../Footer/';
 
 const images = {
@@ -169,7 +171,7 @@ export default class ProjectPanel extends React.Component {
               <source src={videoLink} type="video/mp4" />
             </video>
           </div>
-          {this.renderCarousel(project.pictures)}
+          <ImageCarousel />
         </div>
 
         <div className="inner-wrapper no-padding top-spacer">
