@@ -166,12 +166,15 @@ export default class ProjectPanel extends React.Component {
         </div>
 
         <div className="inner-wrapper project-panel full-width jcc dark-bg box-shadow no-padding">
+          <ImageCarousel 
+            pictures={project.pictures}
+            title={project.title}
+          />
           <div className="project-panel-background-video">
             <video id="video" style={{height: '100%', width: '100%', objectFit: 'fill'}} autoPlay muted loop>
               <source src={videoLink} type="video/mp4" />
             </video>
           </div>
-          <ImageCarousel />
         </div>
 
         <div className="inner-wrapper no-padding top-spacer">

@@ -1,0 +1,171 @@
+$image-carousel-wrapper-width: 100%;
+$image-carousel-wrapper-min-height: 225px;
+
+$image-container-width: 1920px;
+$image-container-width-2560: 1600px;
+$image-container-width-1920: 980px;
+$image-container-width-1440: 700px;
+$image-container-width-1024: 600px;
+$image-container-width-1023: 600px;
+$image-container-width-425: 350px;
+$image-container-width-375: 350px;
+
+$image-container-height: 1080px;
+$image-container-height-2560: 900px;
+$image-container-height-1920: 576px;
+$image-container-height-1440: 394px;
+$image-container-height-1024: 338px;
+$image-container-height-1023: 338px;
+$image-container-height-425: 197px;
+$image-container-height-375: 197px;
+
+
+
+.image-carousel-wrapper {
+  @include flex; @include justify-center;
+  width: $image-carousel-wrapper-width;
+}
+
+.image-container {
+  @include transition(0.4s);
+  @include flex; @include flex-column; @include align-center;
+  position: relative;
+  background-color: $black;
+  height: $image-container-height;
+  width: $image-container-width;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  z-index: 100;
+}
+
+// @TODO: Refactor to separate file
+.image-dot-container {
+  margin-top: auto;
+  margin-bottom: 20px;
+  padding: 0;
+  z-index: 101;
+}
+
+.image-dot-container > li {
+  display: inline-block;
+  @include transition(0.2s);
+  cursor: pointer;
+  background-color: $blue-grey-400;
+  border: 1px solid $blue-grey-300; border-radius: 50%;
+  height: 12px; width: 12px;
+  margin-right: 10px;
+
+  &:last-child { margin-right: 0px; }
+
+  &.selected { background-color: $blue-grey-800; }
+
+  &:hover { @include box-shadow(0px, 0px, 2px, 1px, rgba(25, 25, 25, 0.2)); background-color: $blue-grey-600; }
+  &:active { background-color: $blue-grey-700 }
+}
+
+// @TODO: Refactor to separate file
+.image-control-container {
+  @include flex; @include align-center; @include justify-between;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.image-control-container > button {
+  @include transition(0.2s);
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.0);
+  border: none;
+  font-size: 28px; font-weight: 600;
+  height: 100%;
+  width: 60px;
+  color: $blue-grey-200;
+  opacity: 0.4;
+
+  &:hover {
+    background-color: rgba(0, 122, 193, 0.6);
+    color: $blue-grey-50;
+    opacity: 1.0;
+    text-shadow: 0px 3px 4px rgba(50, 50, 50, 0.6);
+  }
+
+  &:active {
+    font-size: 40px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    background-color: rgba(0, 0, 0, 0.0);    
+  }
+}
+
+@media (max-width: 2560px) {
+  .image-container {
+    height: $image-container-height-2560;
+    width: $image-container-width-2560;
+  }
+}
+
+/* 1920 x 1080 support */
+@media (max-width: 1920px) {
+  .image-container {
+    height: $image-container-height-1920;
+    width: $image-container-width-1920;
+  }
+}
+
+/* 1440 x 900 support */
+@media (max-width: 1440px) {
+  .image-container {
+    height: $image-container-height-1440;
+    width: $image-container-width-1440;
+  }
+}
+
+@media (max-width: 1024px) {
+  .image-container {
+    height: $image-container-height-1024;
+    width: $image-container-width-1024;
+  }
+}
+
+/* Viewport, right after iPad */
+@media (max-width: 1023px) {
+  .image-container {
+    height: $image-container-height-1023;
+    width: $image-container-width-1023;
+  }
+}
+
+/* iPad Portrait */
+@media (max-width: 768px) {
+  .image-container {
+  }
+}
+
+/* Right after iPad Portrait */
+@media (max-width: 767px) {
+  .image-container {
+  }
+}
+
+/* Mobile XL Portrait */
+@media (max-width: 425px) {
+  .image-container {
+    height: $image-container-height-425;
+    width: $image-container-width-425;
+  }
+}
+
+/* Remove some paddings in extra small screens for more working area */
+@media (max-width: 375px) {
+  .image-container {
+    height: $image-container-height-375;
+    width: $image-container-width-375;
+  }
+}
