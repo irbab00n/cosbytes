@@ -2,7 +2,7 @@ $image-carousel-wrapper-width: 100%;
 $image-carousel-wrapper-min-height: 225px;
 
 $image-container-width: 1920px;
-$image-container-width-2560: 1600px;
+$image-container-width-2560: 1440px;
 $image-container-width-1920: 980px;
 $image-container-width-1440: 700px;
 $image-container-width-1024: 600px;
@@ -11,13 +11,19 @@ $image-container-width-425: 350px;
 $image-container-width-375: 350px;
 
 $image-container-height: 1080px;
-$image-container-height-2560: 900px;
+$image-container-height-2560: 810px;
 $image-container-height-1920: 576px;
 $image-container-height-1440: 394px;
 $image-container-height-1024: 338px;
 $image-container-height-1023: 338px;
 $image-container-height-425: 197px;
 $image-container-height-375: 197px;
+
+$image-container-control-width: 100px;
+$image-container-control-width-2560: 90px;
+$image-container-control-width-1920: 80px;
+$image-container-control-width-1440: 70px;
+$image-container-control-width-1024: 60px;
 
 
 
@@ -42,7 +48,7 @@ $image-container-height-375: 197px;
 // @TODO: Refactor to separate file
 .image-dot-container {
   margin-top: auto;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 0;
   z-index: 101;
 }
@@ -79,7 +85,7 @@ $image-container-height-375: 197px;
   border: none;
   font-size: 28px; font-weight: 600;
   height: 100%;
-  width: 60px;
+  width: $image-container-control-width;
   color: $blue-grey-200;
   opacity: 0.4;
 
@@ -109,6 +115,10 @@ $image-container-height-375: 197px;
     height: $image-container-height-2560;
     width: $image-container-width-2560;
   }
+
+  .image-control-container > button {
+    width: $image-container-control-width-2560;
+  }
 }
 
 /* 1920 x 1080 support */
@@ -116,6 +126,10 @@ $image-container-height-375: 197px;
   .image-container {
     height: $image-container-height-1920;
     width: $image-container-width-1920;
+  }
+
+  .image-control-container > button {
+    width: $image-container-control-width-1920;
   }
 }
 
@@ -125,12 +139,20 @@ $image-container-height-375: 197px;
     height: $image-container-height-1440;
     width: $image-container-width-1440;
   }
+
+  .image-control-container > button {
+    width: $image-container-control-width-1440;
+  }
 }
 
 @media (max-width: 1024px) {
   .image-container {
     height: $image-container-height-1024;
     width: $image-container-width-1024;
+  }
+
+  .image-control-container > button {
+    width: $image-container-control-width-1024;
   }
 }
 
