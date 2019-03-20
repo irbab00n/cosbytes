@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ImageLoading from './ImageLoading';
+
 class ImageCarousel extends React.Component {
   constructor(props) {
     super(props);
@@ -26,7 +28,6 @@ class ImageCarousel extends React.Component {
   shouldComponentUpdate(nextProps) {
     const { title } = nextProps;
     if (title !== this.props.title && this.state.currentIndex !== 0) {
-      console.log('changing projects');
       this.setState({currentIndex: 0});
     }
     return true;
@@ -34,7 +35,6 @@ class ImageCarousel extends React.Component {
 
   setCurrentIndex(index) {
     const { pictures } = this.props;
-    console.log('setting index: ', index);
     if (index < 0 || index > pictures.length - 1 || index === this.state.currentIndex) {
       return;
     }
@@ -50,17 +50,30 @@ class ImageCarousel extends React.Component {
 
     let link = pictures[currentIndex] === undefined ? '' : pictures[currentIndex].link;
 
+    let currentImageBackground = {
+      background: `#000000`
+    };
+
     let currentImage = {
-      background: `#000000 url(${link})`
+      background: `url(${link})`
     };
 
     return (
 
       <div className={`image-carousel-wrapper`}>
-        <div className={`image-container`} style={currentImage}>
+        {/* Image Container */}
+        <div className={`image-container`}>
+          {/* Loading Container */}
+          <div className={`image-subcontainer centered`}>
+            <ImageLoading />
+          </div>
+          {/* Image Container */}
+          <div className={`image-container-image`} style={currentImage} />
+          {/* Image Container */}
           <ul className={`image-dot-container`}>
             {this.buildListItems(pictures)}
           </ul>
+
           <div className={`image-control-container`}>
             <button className={`${currentIndex === 0 ? 'disabled' : ''}`} onClick={() => this.setCurrentIndex(currentIndex - 1)}>
               {
@@ -77,7 +90,9 @@ class ImageCarousel extends React.Component {
               }
             </button>
           </div>
+
         </div>
+
       </div>
 
     );

@@ -51,7 +51,7 @@ export default class ProjectPanel extends React.Component {
     if ('onresize' in window) {
         window.addEventListener("resize", () => {
           this.forceUpdate();
-          console.log("resize");
+          // console.log("resize");
         }, false);
     }
 
@@ -170,11 +170,11 @@ export default class ProjectPanel extends React.Component {
             pictures={project.pictures}
             title={project.title}
           />
-          <div className="project-panel-background-video">
+          {/* <div className="project-panel-background-video">
             <video id="video" style={{height: '100%', width: '100%', objectFit: 'fill'}} autoPlay muted loop>
               <source src={videoLink} type="video/mp4" />
             </video>
-          </div>
+          </div> */}
         </div>
 
         <div className="inner-wrapper no-padding top-spacer">
