@@ -5,6 +5,9 @@ html * {
   // font-family: gordita,Helvetica Neue,Helvetica,sans-serif;
   font-family: 'Raleway', sans-serif;
 }
+html.fixed {
+  overflow: hidden;
+}
 
 *, *::before, *::after {
   box-sizing: inherit;

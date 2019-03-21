@@ -98,6 +98,7 @@ $image-container-control-width-1024: 60px;
   height: 100%;
   position: absolute;
   width: 100%;
+  pointer-events: none;
 }
 
 .image-control-container > button {
@@ -110,6 +111,7 @@ $image-container-control-width-1024: 60px;
   width: $image-container-control-width;
   color: $blue-grey-200;
   opacity: 0.4;
+  pointer-events: all;
 
 
   &:hover {
