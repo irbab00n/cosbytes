@@ -50,7 +50,7 @@ export default class ProjectsListItem extends React.Component {
     const { onSelectFunction } = this.props;
     onSelectFunction();
     window.scrollTo(0, 0);
-    e.currentTarget.scrollIntoView({behavior: 'smooth', inline: 'start'});
+    // e.currentTarget.scrollIntoView({behavior: 'smooth', inline: 'start'});
   }
 
   render() {

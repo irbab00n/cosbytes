@@ -62,7 +62,7 @@ class ImageCarousel extends React.Component {
       <div className="image-carousel-wrapper">
         {
           showModal ?
-            <ImageModal 
+            <ImageModal
               currentIndex={currentIndex}
               toggleFunction={this.toggleShowModal}
               pictures={pictures}

@@ -33,18 +33,17 @@ $image-container-control-width-1024: 60px;
 }
 
 .image-container {
-  @include transition(0.4s);
+  @include transition(0.3s);
   @include flex; @include flex-column; @include align-center;
   cursor: zoom-in;
+  border-radius: 4px;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.8);
+  // background-color: rgba(0, 0, 0, 0.8);
   height: $image-container-height;
   width: $image-container-width;
   z-index: 100;
 
-  &:hover {
-    @include box-shadow(0px, 0px, 4px, 3px, rgba(25, 25, 25, 0.5));
-  }
+  
 }
 
 .image-subcontainer {
@@ -59,7 +58,7 @@ $image-container-control-width-1024: 60px;
 }
 
 .image-container-image {
-  @include transition(0.2s);
+  @include transition(0.4s);
   @include flex;
   position: absolute;
   height: 100%;
@@ -67,6 +66,14 @@ $image-container-control-width-1024: 60px;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: contain !important;
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(50, 50, 50, 0.6));
+  filter: drop-shadow(0px 4px 4px rgba(50, 50, 50, 0.6));
+
+  &:hover {
+    // @include box-shadow(0px, 0px, 4px, 3px, rgba(25, 25, 25, 0.5));
+    -webkit-filter: drop-shadow(0px 4px 10px rgba(50, 50, 50, 0.9));
+    filter: drop-shadow(0px 4px 10px rgba(50, 50, 50, 0.9));
+  }
 }
 
 // @TODO: Refactor to separate file
@@ -75,6 +82,7 @@ $image-container-control-width-1024: 60px;
   margin-bottom: 10px;
   padding: 0;
   z-index: 101;
+  pointer-events: none;
 }
 
 .image-dot-container > li {
@@ -85,6 +93,7 @@ $image-container-control-width-1024: 60px;
   border: 1px solid $blue-grey-300; border-radius: 50%;
   height: 12px; width: 12px;
   margin-right: 10px;
+  pointer-events: all;
 
   &:last-child { margin-right: 0px; }
   &.selected { background-color: $blue-grey-800; }
@@ -106,23 +115,24 @@ $image-container-control-width-1024: 60px;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.0);
   border: none;
-  font-size: 28px; font-weight: 600;
+  font-size: 36px; font-weight: 600;
   height: 100%;
   width: $image-container-control-width;
   color: $blue-grey-200;
   opacity: 0.4;
   pointer-events: all;
-
+  text-shadow: 0px 3px 2px rgba(50, 50, 50, 0.9);
 
   &:hover {
-    background-color: rgba(0, 122, 193, 0.6);
-    color: $blue-grey-50;
+    // background-color: rgba(0, 122, 193, 0.2);
+    color: $amber-400;
     opacity: 1.0;
-    text-shadow: 0px 3px 4px rgba(50, 50, 50, 0.6);
+    text-shadow: 0px 4px 3px rgba(50, 50, 50, 0.8);
   }
 
   &:active {
-    font-size: 40px;
+    font-size: 48px;
+    text-shadow: 0px 3px 2px rgba(50, 50, 50, 0.5);
   }
 
   &:focus {
