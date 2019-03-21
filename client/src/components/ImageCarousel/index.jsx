@@ -1,32 +1,25 @@
 import React from 'react';
 
+import ImageControls from './ImageControls';
+import ImageDots from './ImageDots';
+import ImageLoading from './ImageLoading';
+import ImageModal from './ImageModal';
+import ImagePanel from './ImagePanel';
+
 class ImageCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentIndex: 0
+      currentIndex: 0,
+      showModal: false
     };
-    this.buildListItems = this.buildListItems.bind(this);
     this.setCurrentIndex = this.setCurrentIndex.bind(this);
-  }
-
-  buildListItems(pictures) {
-    const { currentIndex } = this.state;
-    return pictures.map((slide, index) => {
-      return (
-        <li
-          key={`slide-selector-${index}`}
-          className={`${currentIndex === index ? 'selected' : ''}`}
-          onClick={() => this.setCurrentIndex(index)}
-        />
-      );
-    });
+    this.toggleShowModal = this.toggleShowModal.bind(this);
   }
 
   shouldComponentUpdate(nextProps) {
     const { title } = nextProps;
     if (title !== this.props.title && this.state.currentIndex !== 0) {
-      console.log('changing projects');
       this.setState({currentIndex: 0});
     }
     return true;
@@ -34,7 +27,6 @@ class ImageCarousel extends React.Component {
 
   setCurrentIndex(index) {
     const { pictures } = this.props;
-    console.log('setting index: ', index);
     if (index < 0 || index > pictures.length - 1 || index === this.state.currentIndex) {
       return;
     }
@@ -44,40 +36,69 @@ class ImageCarousel extends React.Component {
     });
   }
 
+  toggleShowModal() {
+    document.querySelector('html').classList.toggle('fixed');
+    this.setState({
+      showModal: !this.state.showModal
+    });
+  }
+
   render() {
-    const { currentIndex } = this.state;
+    const { currentIndex, showModal } = this.state;
     const { pictures } = this.props;
 
     let link = pictures[currentIndex] === undefined ? '' : pictures[currentIndex].link;
 
+    let currentImageBackground = {
+      background: `#000000`
+    };
+
     let currentImage = {
-      background: `#000000 url(${link})`
+      background: `url(${link})`
     };
 
     return (
 
-      <div className={`image-carousel-wrapper`}>
-        <div className={`image-container`} style={currentImage}>
-          <ul className={`image-dot-container`}>
-            {this.buildListItems(pictures)}
-          </ul>
-          <div className={`image-control-container`}>
-            <button className={`${currentIndex === 0 ? 'disabled' : ''}`} onClick={() => this.setCurrentIndex(currentIndex - 1)}>
-              {
-                currentIndex === 0 ?
-                  '' :
-                  String.fromCharCode(10094)
-              }
-            </button>
-            <button className={`${currentIndex === pictures.length - 1 ? 'disabled' : ''}`} onClick={() => this.setCurrentIndex(currentIndex + 1)}>
-              {
-                currentIndex === pictures.length - 1 ?
-                  '' :
-                  String.fromCharCode(10095)
-              }
-            </button>
-          </div>
+      <div className="image-carousel-wrapper">
+        {
+          showModal ?
+            <ImageModal 
+              currentIndex={currentIndex}
+              toggleFunction={this.toggleShowModal}
+              pictures={pictures}
+              setCurrentIndex={this.setCurrentIndex}
+            /> :
+            null
+        }
+        <div className="image-container">
+          {/* Loading Container */}
+          {
+            showModal ?
+              null :
+              <div className="image-subcontainer centered">
+                <ImageLoading />
+              </div>
+          }
+          {/* Image Container */}
+          {
+            showModal ?
+              null :
+              <ImagePanel currentImage={currentImage} toggleShowModal={this.toggleShowModal} />
+          }
+          {/* Image Dot Container */}
+          {
+            showModal ?
+              null :
+              <ImageDots currentIndex={currentIndex} pictures={pictures} setCurrentIndex={this.setCurrentIndex} />
+          }
+          {/* Image Control Container */}
+          {
+            showModal ?
+              null :
+              <ImageControls currentIndex={currentIndex} pictures={pictures} setCurrentIndex={this.setCurrentIndex} />
+          }
         </div>
+
       </div>
 
     );
