@@ -12,7 +12,7 @@ const slides = [
       <div className={`jumbotron-slide-container ${show ? 'show' : ''} ac jc`}>
         <a href="https://github.com/irbab00n" target="_blank"><button><img src="https://s3-us-west-1.amazonaws.com/cos-bytes.com/github_logo.png"/></button></a>
         <a href="https://www.linkedin.com/in/cosbyts/" target="_blank"><button><img src="https://s3-us-west-1.amazonaws.com/cos-bytes.com/linkedin_logo.png"/></button></a>
-        <a href="https://s3-us-west-1.amazonaws.com/cos-bytes.com/resume.pdf" target="_blank"><button className="large-font">Resume</button></a>
+        <a href="https://s3-us-west-1.amazonaws.com/cos-bytes.com/resume.pdf" target="_blank"><button className="large-font"><i className="fas fa-file-pdf"></i>&nbsp;Resume</button></a>
       </div>
     ),
     subtitle: 'I like to build things',
@@ -22,7 +22,7 @@ const slides = [
   {
     feature: (show) => (
       <div className={`jumbotron-slide-container ${show ? 'show' : ''} ac jc`}>
-        <Link to="/projects"><button className="large-font">Projects</button></Link>
+        <Link to="/projects"><button className="large-font"><i className="fas fa-laptop-code"></i>&nbsp;Projects</button></Link>
       </div>
     ),
     subtitle: 'See what I\'ve been working on',
@@ -32,7 +32,7 @@ const slides = [
   {
     feature: (show) => (
       <div className={`jumbotron-slide-container ${show ? 'show' : ''} ac jc`}>
-        <Link to="/blog"><button className="large-font">Blog</button></Link>
+        <Link to="/blog"><button className="large-font"><i className="fas fa-blog"></i>&nbsp;Blog</button></Link>
       </div>
     ),
     subtitle: 'See what\'s been on my mind',

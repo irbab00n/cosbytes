@@ -14,10 +14,10 @@ class Navbar extends React.Component {
           <div className="logo"><a href="/">COSBYTES</a></div>
           <ul className="links">
             <li>
-              <a href="/projects">Projects</a>
+              <a href="/projects"><i className="fas fa-laptop-code"></i>&nbsp;Projects</a>
             </li>
             <li>
-              <a href="/blog">Blog</a>
+              <a href="/blog"><i className="fas fa-blog"></i>&nbsp;Blog</a>
             </li>
           </ul>
         </div>
