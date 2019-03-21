@@ -3,7 +3,7 @@ $projects-view-navbar-margin-2560: 70px;
 $projects-view-navbar-margin-1920: 60px;
 $projects-view-navbar-margin: 50px;
 
-$projects-view-section-height: 700px;
+
 
 .projects-view-wrapper {
   @include box-size-border-box;
@@ -13,7 +13,6 @@ $projects-view-section-height: 700px;
 
 .projects-view-section {
   position: relative;
-  height: $projects-view-section-height;
   width: 100%;
 
   &.cosbytes-blue {
@@ -35,6 +34,23 @@ $projects-view-section-height: 700px;
 .projects-view-section > .inner-wrapper > .half-column {
   @include flex; @include flex-column;
   width: 50%;
+
+  & > .inner-wrapper {
+    margin: auto 20px;
+  }
+
+  & > .inner-wrapper > h1 {
+    font-size: 48px;
+  }
+  & > .inner-wrapper  > h2 {
+    font-size: 40px;
+  }
+  & > .inner-wrapper  > h3 {
+    font-size: 32px;
+  }
+  & > .inner-wrapper > h4 {
+    font-size: 24px;
+  }
 }
 
 .projects-view-section > .inner-wrapper > * > h1 {
@@ -96,7 +112,10 @@ $projects-view-section-height: 700px;
 
 /* Viewport, right after iPad */
 @media (max-width: 1023px) {
-  
+  .projects-view-section > .inner-wrapper > .half-column {
+    width: 100%;
+    margin: 20px 0;
+  }
 }
 
 /* iPad Portrait */

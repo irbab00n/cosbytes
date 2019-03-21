@@ -1,5 +1,5 @@
 .most-recent-navigation {
-  margin-bottom: 40px;
+  margin: 40px 0;
 }
 
 .most-recent-navigation-arrow {
@@ -10,10 +10,10 @@
   margin: 10px auto;
 
   &:hover {
-    color: $blue-grey-100;
+    color: $amber-400;
   }
 
   &:active {
-    color: $blue-grey-300;
+    color: $amber-600;
   }
 }

@@ -65,21 +65,25 @@ class ProjectsMain extends React.Component {
               <h4 className="center" onClick={() => this.scrollToTargetId('most-recent')}>See what I've been up to</h4>
             </div>
             <div className="half-column">
-              <h2>{mostRecent.title}</h2>
-              <ul className="project-tech-wrapper">
-                {
-                  this.buildTechLabelImages(mostRecent.stack)
-                }
-              </ul>
-              <div className="project-description-wrapper">
-                {mostRecent.overview}
+              <div className="inner-wrapper">
+                <h2>{mostRecent.title}</h2>
+                <ul className="project-tech-wrapper">
+                  {
+                    this.buildTechLabelImages(mostRecent.stack)
+                  }
+                </ul>
+                <div className="project-description-wrapper">
+                  {mostRecent.overview}
+                </div>
               </div>
             </div>
             <div className="half-column">
-              <ImageCarousel 
-                pictures={mostRecent.pictures}
-                title={mostRecent.title}
-              />
+              <div className="inner-wrapper">
+                <ImageCarousel 
+                  pictures={mostRecent.pictures}
+                  title={mostRecent.title}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -91,23 +95,31 @@ class ProjectsMain extends React.Component {
               <h4 className="center" onClick={() => this.scrollToTargetId('personal-favorite')}>My Personal Favorite</h4>
             </div>
             <div className="half-column">
-              <h2>{favorite.title}</h2>
-              <ul className="project-tech-wrapper">
-                {
-                  this.buildTechLabelImages(favorite.stack)
-                }
-              </ul>
-              <div className="project-description-wrapper">
-                {favorite.overview}
+              <div className="inner-wrapper">
+                <h2>{favorite.title}</h2>
+                <ul className="project-tech-wrapper">
+                  {
+                    this.buildTechLabelImages(favorite.stack)
+                  }
+                </ul>
+                <div className="project-description-wrapper">
+                  {favorite.overview}
+                </div>
               </div>
             </div>
             <div className="half-column">
-              <ImageCarousel 
-                pictures={favorite.pictures}
-                title={favorite.title}
-              />
+              <div className="inner-wrapper">
+                <ImageCarousel 
+                  pictures={favorite.pictures}
+                  title={favorite.title}
+                />
+              </div>
             </div>
           </div>
+        </div>
+
+        <div className="projects-view-section">
+          <div className="spacer-element-20"></div>
         </div>
       </section>
 

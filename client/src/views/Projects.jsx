@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 
+import Footer from '../components/Footer/';
 import ProjectsMain from '../components/Projects/ProjectsMain';
 import OldProjects from './OldProjects';
 
@@ -26,6 +27,7 @@ class Projects extends React.Component {
 
           {/* <Route path={`${match.url}/post/:slug`} component={BlogPost} /> */}
         </Switch>
+        <Footer />
       </main>
     );
 

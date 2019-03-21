@@ -1,8 +1,9 @@
 .projects-banner {
   @include jumbotron-background;
+  @include box-shadow(0px, 2.5px, 5px, 0px, rgba(25, 25, 25, 0.4));
   position: relative;
   overflow: hidden;
-  height: 100%;
+  height: 700px;
   width: 100%;
 }
 
@@ -17,6 +18,7 @@
   font-size: 48px;
   line-height: 1;
   margin: 20px;
+  text-align: center;
 
   &.centered {
     // align-self: center;
@@ -128,3 +130,52 @@
 @-moz-keyframes spin-back { 100% { -moz-transform: rotate(-360deg); } }
 @-webkit-keyframes spin-back { 100% { -webkit-transform: rotate(-360deg); } }
 @keyframes spin-back { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
+
+/* RESPONSIVE STYLES */
+@media (max-width: 2560px) {
+
+}
+
+/* 1920 x 1080 support */
+@media (max-width: 1920px) {
+
+}
+
+/* 1440 x 900 support */
+@media (max-width: 1440px) {
+
+}
+
+/* Viewport, right after iPad */
+@media (max-width: 1023px) {
+  .projects-banner {
+    height: 400px;
+  }
+
+  .banner-container > h1 {
+
+    &.centered {
+      margin-top: 160px;
+    }
+  }
+}
+
+/* iPad Portrait */
+@media (max-width: 768px) {
+
+}
+
+/* Right after iPad Portrait */
+@media (max-width: 767px) {
+
+}
+
+/* Mobile XL Portrait */
+@media (max-width: 425px) {
+  
+}
+
+/* Remove some paddings in extra small screens for more working area */
+@media (max-width: 375px) {
+
+}
