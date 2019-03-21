@@ -1,32 +1,96 @@
-$project-view-navbar-margin-full: 80px; 
-$project-view-navbar-margin-2560: 70px;
-$project-view-navbar-margin-1920: 60px;
-$project-view-navbar-margin: 50px;
+$projects-view-navbar-margin-full: 80px; 
+$projects-view-navbar-margin-2560: 70px;
+$projects-view-navbar-margin-1920: 60px;
+$projects-view-navbar-margin: 50px;
+
+$projects-view-section-height: 700px;
 
 .projects-view-wrapper {
   @include box-size-border-box;
   width: 100%;
-  margin: $project-view-navbar-margin-full auto 0 auto;
+  margin: $projects-view-navbar-margin-full auto 0 auto;
+}
+
+.projects-view-section {
+  position: relative;
+  height: $projects-view-section-height;
+  width: 100%;
+
+  &.cosbytes-blue {
+    background-color: #0F6DB3;
+  }
+}
+
+.projects-view-section > .inner-wrapper {
+  @include flex; @include flex-wrap(wrap);
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.projects-view-section > .inner-wrapper > .full-column {
+  @include flex; @include flex-column;
+  width: 100%;
+}
+
+.projects-view-section > .inner-wrapper > .half-column {
+  @include flex; @include flex-column;
+  width: 50%;
+}
+
+.projects-view-section > .inner-wrapper > * > h1 {
+  margin-top: 20px;
+  font-size: 48px;
+
+  &.center {
+    margin: 0 auto;
+  }
+}
+
+.projects-view-section > .inner-wrapper > * > h2 {
+  margin-top: 20px;
+  font-size: 40px;
+
+  &.center {
+    margin: 0 auto;
+  }
+}
+
+.projects-view-section > .inner-wrapper > * > h3 {
+  margin-top: 20px;
+  font-size: 32px;
+
+  &.center {
+    margin: 0 auto;
+  }
+}
+
+.projects-view-section > .inner-wrapper > * > h4 {
+  margin-top: 20px;
+  font-size: 24px;
+
+  &.center {
+    margin: 0 auto;
+  }
 }
 
 /* RESPONSIVE STYLES */
 @media (max-width: 2560px) {
   .projects-view-wrapper {
-    margin: $project-view-navbar-margin-2560 auto 0 auto;
+    margin: $projects-view-navbar-margin-2560 auto 0 auto;
   }
 }
 
 /* 1920 x 1080 support */
 @media (max-width: 1920px) {
   .projects-view-wrapper {
-    margin: $project-view-navbar-margin-1920 auto 0 auto;
+    margin: $projects-view-navbar-margin-1920 auto 0 auto;
   }
 }
 
 /* 1440 x 900 support */
 @media (max-width: 1440px) {
   .projects-view-wrapper {
-    margin: $project-view-navbar-margin auto 0 auto;
+    margin: $projects-view-navbar-margin auto 0 auto;
   }
 }
 

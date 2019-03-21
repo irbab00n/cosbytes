@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 
 import ProjectsMain from '../components/Projects/ProjectsMain';
+import OldProjects from './OldProjects';
 
 class Projects extends React.Component { 
   constructor(props) {
@@ -18,7 +19,7 @@ class Projects extends React.Component {
       <main className="project-page-layout">
         <Switch>
           <Route exact path={match.url} component={ProjectsMain} />
-          {/* <Route path={`${match.url}/p/:page`}  component={BlogList} /> */}
+          <Route path={`${match.url}/list`}  component={OldProjects} />
           {/* <Route exact path={`${match.url}/post`} render={() => (<Redirect to={match.url}/>)} /> */}
           {/* <Route path={`${match.url}/category/:category`}  component={BlogList} /> */}
           {/* <Route path={`${match.url}/tag/:tag`}  component={BlogList} /> */}

@@ -1,0 +1,19 @@
+.most-recent-navigation {
+  margin-bottom: 20px;
+}
+
+.most-recent-navigation-arrow {
+  @include transition(0.2s);
+  cursor: pointer;
+  color: $blue-grey-200;
+  font-size: 20px;
+  margin: 10px auto;
+
+  &:hover {
+    color: $blue-grey-100;
+  }
+
+  &:active {
+    color: $blue-grey-300;
+  }
+}

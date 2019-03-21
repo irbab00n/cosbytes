@@ -1,0 +1,130 @@
+.projects-banner {
+  @include jumbotron-background;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.banner-container {
+  @include flex; @include flex-column;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.banner-container > h1 {
+  font-size: 48px;
+  line-height: 1;
+  margin: 20px;
+
+  &.centered {
+    // align-self: center;
+    margin: auto;
+    margin-top: 300px;
+  }
+  &.white {
+    color: $white;
+  }
+}
+
+.banner-container > h2 {
+  font-size: 40px;
+  line-height: 1;
+  margin: 20px;
+
+  &.centered {
+    align-self: center;
+  }
+  &.white {
+    color: $white;
+  }
+}
+
+.banner-container > h4 {
+  font-size: 24px;
+  line-height: 1;
+  margin: 20px;
+
+  &.centered {
+    align-self: center;
+  }
+  &.white {
+    color: $white;
+  }
+}
+
+.projects-banner > i {
+  position: absolute;
+  color: #1064A2;
+  text-shadow: 0px 0px 3px rgba(25, 25, 25, 0.2);
+}
+
+#gear1 {
+  font-size: 500px;
+  top: -50px;
+  left: -70px;
+  z-index: 50;
+}
+
+#gear2 {
+  font-size: 500px;
+  top: 350px;
+  left: 250px;
+  z-index: 50;
+
+}
+
+#gear3 {
+  font-size: 500px;
+  top: 450px;
+  left: 680px;
+  z-index: 50;
+
+}
+
+#gear4 {
+  font-size: 1000px;
+  top: 100px;
+  right: -400px;
+  color: rgba(16, 95, 148, 1.0);
+}
+
+#gear5 {
+  font-size: 1000px;
+  top: 200px;
+  left: -400px;
+  color: rgba(16, 95, 148, 1.0);
+}
+
+.spin {
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+}
+
+.spin-slow {
+  -webkit-animation:spin 8s linear infinite;
+  -moz-animation:spin 8s linear infinite;
+  animation:spin 8s linear infinite;
+}
+
+.spin-back {
+  -webkit-animation:spin-back 4s linear infinite;
+  -moz-animation:spin-back 4s linear infinite;
+  animation:spin-back 4s linear infinite;
+}
+
+.spin-back-slow {
+  -webkit-animation:spin-back 8s linear infinite;
+  -moz-animation:spin-back 8s linear infinite;
+  animation:spin-back 8s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@-moz-keyframes spin-back { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes spin-back { 100% { -webkit-transform: rotate(-360deg); } }
+@keyframes spin-back { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
