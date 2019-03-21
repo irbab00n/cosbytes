@@ -1,58 +1,34 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Redirect, Route, Switch } from 'react-router';
 
-import ProjectsList from '../components/ProjectsList/';
-import ProjectPanel from '../components/ProjectPanel/';
+import ProjectsMain from '../components/Projects/ProjectsMain';
 
-import projects from '../lib/projects';
-
-export default class Projects extends React.Component {
+class Projects extends React.Component { 
   constructor(props) {
     super(props);
-    this.state = {
-      currentIndex: 0,
-      fadeOut: false,
-    };
-    this.setCurrentIndex = this.setCurrentIndex.bind(this);
   }
 
-  setCurrentIndex(index) {
-    const { currentIndex } = this.state;
-
-    if (currentIndex === index) {return;}
-
-    this.setState({
-      fadeOut: true
-    }, () => {
-      setTimeout(() => {
-        this.setState({
-          currentIndex: index,
-          fadeOut: false
-        });
-      }, 400);
-    });
+  componentDidMount() {
   }
 
   render() {
-    const { currentIndex, fadeOut } = this.state;
-    
+    const { match } = this.props;
+
     return (
-      <main className="projects-page-layout">
-        <Helmet>
-          <title>cosbytes | Projects</title>
-        </Helmet>
-        <ProjectsList 
-          currentIndex={currentIndex}
-          projects={projects}
-          onSelectFunction={this.setCurrentIndex}
-        />
-        <ProjectPanel
-          currentIndex={currentIndex}
-          project={projects[currentIndex]}
-          fadeOut={fadeOut}
-        />
+      <main className="project-page-layout">
+        <Switch>
+          <Route exact path={match.url} component={ProjectsMain} />
+          {/* <Route path={`${match.url}/p/:page`}  component={BlogList} /> */}
+          {/* <Route exact path={`${match.url}/post`} render={() => (<Redirect to={match.url}/>)} /> */}
+          {/* <Route path={`${match.url}/category/:category`}  component={BlogList} /> */}
+          {/* <Route path={`${match.url}/tag/:tag`}  component={BlogList} /> */}
+
+          {/* <Route path={`${match.url}/post/:slug`} component={BlogPost} /> */}
+        </Switch>
       </main>
     );
 
   }
-};
+}
+
+export default Projects;
