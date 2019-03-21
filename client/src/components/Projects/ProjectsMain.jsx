@@ -9,7 +9,7 @@ class ProjectsMain extends React.Component {
   constructor(props) {
     super(props);
     this.buildTechLabelImages = this.buildTechLabelImages.bind(this);
-    this.scrollToMostRecentContainer = this.scrollToMostRecentContainer.bind(this);
+    this.scrollToTargetId = this.scrollToTargetId.bind(this);
   }
 
   buildTechLabelImages(imageTags) {
@@ -23,8 +23,8 @@ class ProjectsMain extends React.Component {
     });
   }
 
-  scrollToMostRecentContainer() {
-    document.getElementById('most-recent').scrollIntoView({
+  scrollToTargetId(id) {
+    document.getElementById(id).scrollIntoView({
       behavior: 'smooth',
       block: 'start'
     });
@@ -33,7 +33,8 @@ class ProjectsMain extends React.Component {
 
   render() {
 
-    const project = projects[0];
+    const mostRecent = projects[0];
+    const favorite = projects[1];
     var videoLink = 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/sea-cliffs.mp4';
 
     return (
@@ -49,8 +50,8 @@ class ProjectsMain extends React.Component {
           <div className="projects-banner">
             <i id="gear2" className="fas fa-cog large spin-back"></i>
             <i id="gear3" className="fas fa-cog large spin"></i>
-            <i id="gear4" className="fas fa-cog large spin-slow"></i>
-            <i id="gear5" className="fas fa-cog large spin-back-slow"></i>
+            <i id="gear4" className="fas fa-cog large spin-back-slow"></i>
+            <i id="gear5" className="fas fa-cog large spin-slow"></i>
             <div className="banner-container">
               <h1 className="centered white">Welcome to my Projects</h1>
             </div>
@@ -60,44 +61,50 @@ class ProjectsMain extends React.Component {
         <div id="most-recent" className="projects-view-section">
           <div className="inner-wrapper">
             <div className="full-column most-recent-navigation">
-              <i className="fas fa-arrow-circle-down most-recent-navigation-arrow" onClick={this.scrollToMostRecentContainer}></i>
-              <h4 className="center" onClick={this.scrollToMostRecentContainer}>See what I've been up to</h4>
+              <i className="fas fa-arrow-circle-down most-recent-navigation-arrow" onClick={() => this.scrollToTargetId('most-recent')}></i>
+              <h4 className="center" onClick={() => this.scrollToTargetId('most-recent')}>See what I've been up to</h4>
             </div>
             <div className="half-column">
-              <h2>{project.title}</h2>
+              <h2>{mostRecent.title}</h2>
               <ul className="project-tech-wrapper">
                 {
-                  this.buildTechLabelImages(project.stack)
+                  this.buildTechLabelImages(mostRecent.stack)
                 }
               </ul>
+              <div className="project-description-wrapper">
+                {mostRecent.overview}
+              </div>
             </div>
             <div className="half-column">
               <ImageCarousel 
-                pictures={project.pictures}
-                title={project.title}
+                pictures={mostRecent.pictures}
+                title={mostRecent.title}
               />
             </div>
           </div>
         </div>
 
-        <div id="most-recent" className="projects-view-section">
+        <div id="personal-favorite" className="projects-view-section">
           <div className="inner-wrapper">
             <div className="full-column most-recent-navigation">
-              <i className="fas fa-arrow-circle-down most-recent-navigation-arrow" onClick={this.scrollToMostRecentContainer}></i>
-              <h4 className="center" onClick={this.scrollToMostRecentContainer}>See what I've been up to</h4>
+              <i className="fas fa-arrow-circle-down most-recent-navigation-arrow" onClick={() => this.scrollToTargetId('personal-favorite')}></i>
+              <h4 className="center" onClick={() => this.scrollToTargetId('personal-favorite')}>My Personal Favorite</h4>
             </div>
             <div className="half-column">
-              <h2>{project.title}</h2>
+              <h2>{favorite.title}</h2>
               <ul className="project-tech-wrapper">
                 {
-                  this.buildTechLabelImages(project.stack)
+                  this.buildTechLabelImages(favorite.stack)
                 }
               </ul>
+              <div className="project-description-wrapper">
+                {favorite.overview}
+              </div>
             </div>
             <div className="half-column">
               <ImageCarousel 
-                pictures={project.pictures}
-                title={project.title}
+                pictures={favorite.pictures}
+                title={favorite.title}
               />
             </div>
           </div>
