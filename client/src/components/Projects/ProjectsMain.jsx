@@ -2,8 +2,8 @@ import React from 'react';
 import { Helmet } from "react-helmet";
 import { Link } from 'react-router-dom';
 
+import ProjectsMainListItem from './ProjectsMainListItem';
 import ProjectsMainSection from './ProjectsMainSection';
-import ProjectsListItem from '../ProjectsList/ProjectsListItem';
 
 import projects from '../../lib/projects';
 
@@ -86,18 +86,10 @@ class ProjectsMain extends React.Component {
           <div className="inner-wrapper">
             {
               projects.map((project, index) => (
-                <div key={`project-qc-${index}`} className="quarter-column">
-                  <div className="inner-wrapper">
-                    <h4>{project.title}</h4>
-                    <div className="project-thumbnail-wrapper">
-                      <div className="image" style={
-                        {
-                          background: `url(${project.thumbnails[0].link})`
-                        }
-                      }/>
-                    </div>
-                  </div>
-                </div>
+                <ProjectsMainListItem
+                  key={`project-list-item-${index}`}
+                  project={project}
+                />
               ))
             }
           </div>
