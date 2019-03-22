@@ -1,25 +1,4 @@
-.projects-list-item {
-  @include transition(0.2s);
-  cursor: pointer;
-  background-color: $blue-grey-50;
-  border-bottom: 1px solid rgba(175, 175, 175, 0.5);
-  height: 220px;
-  overflow: hidden;
-
-  &:hover {
-    background-color: white;
-  }
-  
-  &.selected {
-    background-color: $amber-300;
-  }
-  
-  &:active {
-    background-color: $amber-500;
-  }
-}
-
-.list-item-split-wrapper {
+.project-thumbnail-wrapper {
   @include transition(0.2s);
   @include flex; @include align-center; @include justify-between;
   height: 100%;
@@ -32,11 +11,11 @@
   }
 }
 
-.list-item-image-wrapper {
+.project-thumbnail-wrapper {
   // @include jumbotron-background;\
   @include transition(0.2s);
   overflow: hidden;
-  height: 100%; width: 50%; max-width: 50%;
+  height: 200px; width: 100%; max-width: 355px;
   padding: 20px;
 
   & > .image {

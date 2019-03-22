@@ -1,199 +1,188 @@
-/* MAIN PAGE LAYOUT VALUES */
-/**
- * These values must be the same as the "$navbar-height" values found within:
- * 
- *    /client/sass/components/_navbar.scss
- * 
- */
-$projects-layout-navbar-padding-full: 80px; 
-$projects-layout-navbar-padding-2560: 70px;
-$projects-layout-navbar-padding-1920: 60px;
-$projects-layout-navbar-padding: 50px;
+$projects-view-navbar-margin-full: 80px; 
+$projects-view-navbar-margin-2560: 70px;
+$projects-view-navbar-margin-1920: 60px;
+$projects-view-navbar-margin: 50px;
 
 
-$side-track-collapsed-width: 0px;
-$side-track-expanded-width-full: 600px;
-$side-track-expanded-width-2560: 480px;
-$side-track-expanded-width-1920: 400px;
-$side-track-expanded-width-1440: 350px;
-$side-track-expanded-width-1024: 300px;
-$side-track-expanded-width: 375px;
 
-$side-track-item-mobile-small: 350px;
-
-$main-track-max-width: 980px;
-
-.projects-page-layout {
-  @include flex;
+.projects-view-wrapper {
   @include box-size-border-box;
-  margin: $projects-layout-navbar-padding-full auto 0 auto;
   width: 100%;
+  margin: $projects-view-navbar-margin-full auto 0 auto;
 }
 
-.side-track {
-  /* 
-    Since this will be removed from the flow of the page,
-    we need to create a gap to the left of the main track
-  */
-  @include box-size-border-box;
-  @include box-shadow(1px, 0px, 8px, 2px, rgba(25, 25, 25, 0.2));
-  background-color: $blue-grey-50;
-  position: fixed;
-  opacity: 0;
-  overflow-y: scroll;
-  height: calc(100% - #{$navbar-height-full});
-  width: $side-track-expanded-width-full;
+.projects-view-section {
+  position: relative;
+  width: 100%;
+
+  &.cosbytes-blue {
+    background-color: #0F6DB3;
+  }
+}
+
+.projects-view-section > .inner-wrapper {
+  @include flex; @include flex-wrap(wrap);
+  margin: 0 auto;
+  max-width: 1400px;
+
+  & > h1 {
+    font-size: 48px;
+    line-height: 1;
+  }
+  & > h2 {
+    font-size: 40px;
+    line-height: 1;
+  }
+  & > h3 {
+    font-size: 32px;
+    line-height: 1;
+  }
+  & > h4 {
+    font-size: 24px;
+    line-height: 1;
+  }
+}
+
+.projects-view-section > .inner-wrapper > .full-column {
+  @include flex; @include flex-column;
+  width: 100%;
+  
+}
+
+.projects-view-section > .inner-wrapper > .half-column {
+  @include flex; @include flex-column;
+  width: 50%;
 
   & > .inner-wrapper {
-    width: 100%;
+    margin: auto 20px;
   }
 
-  &.show { opacity: 1; }
+  & > .inner-wrapper > h1 {
+    font-size: 48px;
+    line-height: 1;
+  }
+  & > .inner-wrapper  > h2 {
+    font-size: 40px;
+    line-height: 1;
+  }
+  & > .inner-wrapper  > h3 {
+    font-size: 32px;
+    line-height: 1;
+  }
+  & > .inner-wrapper > h4 {
+    font-size: 24px;
+    line-height: 1;
+  }
 }
 
-.main-track {
-  /* 
-    Since the sidebar is removed from the flow of the page,
-    we need to create a margin-based gap to compensate for the element size
-  */
-  @include transition(0.4s);
-  margin-left: $side-track-expanded-width-full;
-  overflow-y: scroll;
-  opacity: 0;
-  height: 100%;
-  width: calc(100% - #{$side-track-expanded-width-full});
+.projects-view-section > .inner-wrapper > .quarter-column {
+  @include flex; @include flex-column;
+  @include transition(0.2s);
+  width: 25%;
 
   & > .inner-wrapper {
-    padding: 20px;
+    @include transition(0.2s);
+    cursor: pointer;
+    border-radius: 4px;
+    height: 300px;
+    margin: 15px;
+    padding: 10px;
+
+    &:hover {
+      background-color: $white;
+      height: 310px;
+      margin: 10px;
+      @include box-shadow(0px, 2px, 5px, 0px, rgba(50, 50, 50, 0.8)); 
+    }
+
+    &:active {
+      background-color: $amber-400;
+    }
+  }
+
+  & > .inner-wrapper > h1 {
+    font-size: 48px;
+    line-height: 1;
+  }
+  & > .inner-wrapper  > h2 {
+    font-size: 40px;
+    line-height: 1;
+  }
+  & > .inner-wrapper  > h3 {
+    font-size: 32px;
+    line-height: 1;
+  }
+  & > .inner-wrapper > h4 {
+    font-size: 24px;
+    line-height: 1;
+  }
+}
+
+.projects-view-section > .inner-wrapper > * > h1 {
+  margin-top: 20px;
+  font-size: 48px;
+
+  &.center {
     margin: 0 auto;
-    max-width: 1920px; width: 100%;
-
-    &.dark-bg { @include jumbotron-background; background-color: #1774B5; }
-    &.jcc { @include flex; @include justify-center; }
-    &.full-width { max-width: 100%; }
-    &.no-padding { padding: 0px !important; }
-    &.bottom-spacer { margin-bottom: 100px; }
-    &.top-spacer { margin-top: 40px; }
-    &.box-shadow { @include box-shadow(0px, 2px, 3px, 1px, rgba(25, 25, 25, 0.4)); }
-  }
-
-  &.show {
-    opacity: 1;
   }
 }
 
+.projects-view-section > .inner-wrapper > * > h2 {
+  margin-top: 20px;
+  font-size: 40px;
+
+  &.center {
+    margin: 0 auto;
+  }
+}
+
+.projects-view-section > .inner-wrapper > * > h3 {
+  margin-top: 20px;
+  font-size: 32px;
+
+  &.center {
+    margin: 0 auto;
+  }
+}
+
+.projects-view-section > .inner-wrapper > * > h4 {
+  margin-top: 20px;
+  font-size: 24px;
+
+  &.center {
+    margin: 0 auto;
+  }
+}
+
+/* RESPONSIVE STYLES */
 @media (max-width: 2560px) {
-  .projects-page-layout {
-    margin-top: $projects-layout-navbar-padding-2560;
-  }
-
-  .main-track {
-    margin-left: $side-track-expanded-width-2560;
-    width: calc(100% - #{$side-track-expanded-width-2560});
-
-    & > .inner-wrapper {
-      max-width: 1440px;
-    }
-  }
-
-  .side-track {
-    min-width: $side-track-expanded-width-2560;
-    max-width: $side-track-expanded-width-2560;
-    height: calc(100% - #{$navbar-height-2560});
+  .projects-view-wrapper {
+    margin: $projects-view-navbar-margin-2560 auto 0 auto;
   }
 }
 
+/* 1920 x 1080 support */
 @media (max-width: 1920px) {
-  .projects-page-layout {
-    margin-top: $projects-layout-navbar-padding-1920;
-  }
-
-  .main-track {
-    margin-left: $side-track-expanded-width-1920;
-    width: calc(100% - #{$side-track-expanded-width-1920});
-
-    & > .inner-wrapper {
-      max-width: 980px;
-    }
-  }
-
-  .side-track {
-    min-width: $side-track-expanded-width-1920;
-    max-width: $side-track-expanded-width-1920;
-    height: calc(100% - #{$navbar-height-1920});
+  .projects-view-wrapper {
+    margin: $projects-view-navbar-margin-1920 auto 0 auto;
   }
 }
 
-
+/* 1440 x 900 support */
 @media (max-width: 1440px) {
-  .projects-page-layout {
-    @include flex-column;
-    margin-top: $projects-layout-navbar-padding;
-  }
-
-  .side-track {
-    min-width: $side-track-expanded-width-1440;
-    max-width: $side-track-expanded-width-1440;
-    height: calc(100% - #{$navbar-height});
-  }
-
-  .main-track {
-    margin-left: $side-track-expanded-width-1440;
-    width: calc(100% - #{$side-track-expanded-width-1440});
-
-    & > .inner-wrapper {
-      max-width: 700px;
-    }
+  .projects-view-wrapper {
+    margin: $projects-view-navbar-margin auto 0 auto;
   }
 }
 
-@media (max-width: 1024px) {
-  .side-track {
-    min-width: $side-track-expanded-width-1024;
-    max-width: $side-track-expanded-width-1024;
-  }
-
-  .main-track {
-    margin-left: $side-track-expanded-width-1024;
-    width: calc(100% - #{$side-track-expanded-width-1024});
-
-    & > .inner-wrapper {
-      max-width: 640px;
-    }
-  }
-}
-
-/* Responsive Work - Move this to individual files as we grow */
 /* Viewport, right after iPad */
 @media (max-width: 1023px) {
-  
-  .projects-page-layout {
-    @include flex-column;
-    margin-top: $projects-layout-navbar-padding;
-  }
-  
-  .main-track {
-    background-color: $blue-grey-50;
+  .projects-view-section > .inner-wrapper > .half-column {
     width: 100%;
-    // margin-left: 0;
-    margin: 0 auto;
+    margin: 20px 0;
   }
-
-  .side-track {
-    @include flex;
-    background-color: $blue-grey-100;
-    position: relative;
-    height: 100px;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-    min-width: 100%;
-
-    & > .inner-wrapper {
-      border-left: 2px solid $amber-400;
-      border-right: 2px solid $amber-400;
-      min-width: $side-track-expanded-width-1440;
-      max-width: $side-track-expanded-width-1440;
-    }
+  .projects-view-section > .inner-wrapper > .quarter-column {
+    width: 50%;
   }
 }
 
@@ -204,34 +193,17 @@ $main-track-max-width: 980px;
 
 /* Right after iPad Portrait */
 @media (max-width: 767px) {
-  .main-track {
-    @include order(1);
-  }
 
-  .side-track {
-    @include order(2);
-  }
 }
 
 /* Mobile XL Portrait */
 @media (max-width: 425px) {
-  
+  .projects-view-section > .inner-wrapper > .quarter-column {
+    width: 100%;
+  }
 }
 
 /* Remove some paddings in extra small screens for more working area */
 @media (max-width: 375px) {
-  .main-track {
-    @include order(1);
-  }
   
-  .side-track {
-    @include order(2);
-    min-width: $side-track-expanded-width;
-    max-width: $side-track-expanded-width;
-
-    & > .inner-wrapper {
-      min-width: $side-track-item-mobile-small;
-      max-width: $side-track-item-mobile-small;
-    }
-  }
 }
