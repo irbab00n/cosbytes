@@ -1,17 +1,15 @@
 import React from 'react';
 
-export default class ProjectsListItem extends React.Component {
+class ProjectsMainListItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hovered: false,
       imageIndex: 0,
       intervalId: null
     };
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.incrementImageIndex = this.incrementImageIndex.bind(this);
-    this.selectListItem = this.selectListItem.bind(this);
   }
 
   handleMouseEnter() {
@@ -46,28 +44,18 @@ export default class ProjectsListItem extends React.Component {
     });
   }
 
-  selectListItem(e) {
-    const { onSelectFunction } = this.props;
-    onSelectFunction();
-    window.scrollTo(0, 0);
-    // e.currentTarget.scrollIntoView({behavior: 'smooth', inline: 'start'});
-  }
-
   render() {
     const { imageIndex } = this.state;
-    const { project, selected } = this.props;
+    const { project } = this.props;
 
     return (
-
-      <div 
-        className={`inner-wrapper projects-list-item ${selected ? 'selected' : ''}`}
-        onClick={this.selectListItem}
+      <div className="quarter-column"
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
       >
-
-        <div className="list-item-split-wrapper">
-          <div className="list-item-image-wrapper">
+        <div className="inner-wrapper">
+          <h4>{project.title}</h4>
+          <div className="project-thumbnail-wrapper">
             <div className="image" style={
               {
                 background: `url(${project.thumbnails[imageIndex].link})`
@@ -75,10 +63,9 @@ export default class ProjectsListItem extends React.Component {
             }/>
           </div>
         </div>
-
       </div>
-      
-    );
-
+    )
   }
 }
+
+export default ProjectsMainListItem;
