@@ -28,6 +28,7 @@ module.exports = [
       'Webpack',
       'Heroku'
     ],
+    slug: 'redoku',
     description: 'Redoku is my React-Redux implementation of one of my favorite quick-puzzle games.  This is an on-going project aimed at designing simple, responsive interface that I will connect into a custom score tracking back-end to deliver support for leaderboard like data tracking.',
     overview: 'This website has served as not only a display center for who I am, but also what I am capable of as a software engineer'
   },
@@ -58,6 +59,7 @@ module.exports = [
       'Webpack',
       'Heroku'
     ],
+    slug: 'cosbytes',
     description: 'My portfolio application has served as a time capsule of my skill set.  Started during my time as a student at Hack reactor, this application has grown from a simple React application using CSS-in-JS, to a full-stack JavaScript application featuring SASS styling, React Routing for pagination, a fully-custom blog using Butter CMS for content management and CDN support.',
     overview: 'This website has served as not only a display center for who I am, but also what I am capable of as a software engineer'
   },

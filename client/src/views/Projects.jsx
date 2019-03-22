@@ -20,9 +20,9 @@ class Projects extends React.Component {
       <main className="project-page-layout">
         <Switch>
           <Route exact path={match.url} component={ProjectsMain} />
-          <Route path={`${match.url}/list`}  component={OldProjects} />
-          {/* <Route exact path={`${match.url}/post`} render={() => (<Redirect to={match.url}/>)} /> */}
-          {/* <Route path={`${match.url}/category/:category`}  component={BlogList} /> */}
+          <Route path={`${match.url}/list`} component={OldProjects} />
+          <Route path={`${match.url}/project/:project`} component={ProjectsMain} />
+          <Route render={() => (<Redirect to={match.url}/>)} />
           {/* <Route path={`${match.url}/tag/:tag`}  component={BlogList} /> */}
 
           {/* <Route path={`${match.url}/post/:slug`} component={BlogPost} /> */}

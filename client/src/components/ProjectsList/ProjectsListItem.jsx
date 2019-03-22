@@ -67,7 +67,6 @@ export default class ProjectsListItem extends React.Component {
       >
 
         <div className="list-item-split-wrapper">
-          <h4>{project.title}</h4>
           <div className="list-item-image-wrapper">
             <div className="image" style={
               {

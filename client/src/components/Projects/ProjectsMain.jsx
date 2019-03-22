@@ -1,9 +1,11 @@
 import React from 'react';
 import { Helmet } from "react-helmet";
+import { Link } from 'react-router-dom';
+
+import ProjectsMainSection from './ProjectsMainSection';
+import ProjectsListItem from '../ProjectsList/ProjectsListItem';
 
 import projects from '../../lib/projects';
-import stackImages from '../../lib/stackImages';
-import ImageCarousel from '../ImageCarousel';
 
 class ProjectsMain extends React.Component {
   constructor(props) {
@@ -58,67 +60,51 @@ class ProjectsMain extends React.Component {
           </div>
         </div>
 
-        <div id="most-recent" className="projects-view-section">
+        <ProjectsMainSection
+          callToAction={'See what I\'ve been up to'}
+          project={mostRecent}
+          sectionId={'most-recent'}
+        />
+
+        <ProjectsMainSection
+          callToAction={'My Personal Favorite'}
+          project={favorite}
+          sectionId={'personal-favorite'}
+        />
+
+        <div id="full-list" className="projects-view-section">
           <div className="inner-wrapper">
             <div className="full-column most-recent-navigation">
-              <i className="fas fa-arrow-circle-down most-recent-navigation-arrow" onClick={() => this.scrollToTargetId('most-recent')}></i>
-              <h4 className="center" onClick={() => this.scrollToTargetId('most-recent')}>See what I've been up to</h4>
+              <i className="fas fa-arrow-circle-down most-recent-navigation-arrow" onClick={() => this.scrollToTargetId('full-list')}></i>
+              <h4 className="center" onClick={() => this.scrollToTargetId('full-list')}>My Full list of projects</h4>
             </div>
-            <div className="half-column">
-              <div className="inner-wrapper">
-                <h2>{mostRecent.title}</h2>
-                <ul className="project-tech-wrapper">
-                  {
-                    this.buildTechLabelImages(mostRecent.stack)
-                  }
-                </ul>
-                <div className="project-description-wrapper">
-                  {mostRecent.overview}
-                </div>
-              </div>
-            </div>
-            <div className="half-column">
-              <div className="inner-wrapper">
-                <ImageCarousel 
-                  pictures={mostRecent.pictures}
-                  title={mostRecent.title}
-                />
-              </div>
-            </div>
-          </div>
+            <h1></h1>
+          </div>  
         </div>
 
-        <div id="personal-favorite" className="projects-view-section">
+        <div className="projects-view-section">
           <div className="inner-wrapper">
-            <div className="full-column most-recent-navigation">
-              <i className="fas fa-arrow-circle-down most-recent-navigation-arrow" onClick={() => this.scrollToTargetId('personal-favorite')}></i>
-              <h4 className="center" onClick={() => this.scrollToTargetId('personal-favorite')}>My Personal Favorite</h4>
-            </div>
-            <div className="half-column">
-              <div className="inner-wrapper">
-                <h2>{favorite.title}</h2>
-                <ul className="project-tech-wrapper">
-                  {
-                    this.buildTechLabelImages(favorite.stack)
-                  }
-                </ul>
-                <div className="project-description-wrapper">
-                  {favorite.overview}
+            {
+              projects.map((project, index) => (
+                <div key={`project-qc-${index}`} className="quarter-column">
+                  <div className="inner-wrapper">
+                    <h4>{project.title}</h4>
+                    <div className="project-thumbnail-wrapper">
+                      <div className="image" style={
+                        {
+                          background: `url(${project.thumbnails[0].link})`
+                        }
+                      }/>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="half-column">
-              <div className="inner-wrapper">
-                <ImageCarousel 
-                  pictures={favorite.pictures}
-                  title={favorite.title}
-                />
-              </div>
-            </div>
+              ))
+            }
           </div>
         </div>
 
         <div className="projects-view-section">
+          <div className="spacer-element-20"></div>
           <div className="spacer-element-20"></div>
         </div>
       </section>

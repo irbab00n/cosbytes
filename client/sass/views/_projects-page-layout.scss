@@ -24,11 +24,29 @@ $projects-view-navbar-margin: 50px;
   @include flex; @include flex-wrap(wrap);
   margin: 0 auto;
   max-width: 1400px;
+
+  & > h1 {
+    font-size: 48px;
+    line-height: 1;
+  }
+  & > h2 {
+    font-size: 40px;
+    line-height: 1;
+  }
+  & > h3 {
+    font-size: 32px;
+    line-height: 1;
+  }
+  & > h4 {
+    font-size: 24px;
+    line-height: 1;
+  }
 }
 
 .projects-view-section > .inner-wrapper > .full-column {
   @include flex; @include flex-column;
   width: 100%;
+  
 }
 
 .projects-view-section > .inner-wrapper > .half-column {
@@ -41,15 +59,62 @@ $projects-view-navbar-margin: 50px;
 
   & > .inner-wrapper > h1 {
     font-size: 48px;
+    line-height: 1;
   }
   & > .inner-wrapper  > h2 {
     font-size: 40px;
+    line-height: 1;
   }
   & > .inner-wrapper  > h3 {
     font-size: 32px;
+    line-height: 1;
   }
   & > .inner-wrapper > h4 {
     font-size: 24px;
+    line-height: 1;
+  }
+}
+
+.projects-view-section > .inner-wrapper > .quarter-column {
+  @include flex; @include flex-column;
+  @include transition(0.2s);
+  width: 25%;
+
+  & > .inner-wrapper {
+    @include transition(0.2s);
+    cursor: pointer;
+    border-radius: 4px;
+    height: 300px;
+    margin: 15px;
+    padding: 10px;
+
+    &:hover {
+      background-color: $white;
+      height: 310px;
+      margin: 10px;
+      @include box-shadow(0px, 2px, 5px, 0px, rgba(50, 50, 50, 0.8)); 
+    }
+
+    &:active {
+      background-color: $amber-400;
+    }
+  }
+
+  & > .inner-wrapper > h1 {
+    font-size: 48px;
+    line-height: 1;
+  }
+  & > .inner-wrapper  > h2 {
+    font-size: 40px;
+    line-height: 1;
+  }
+  & > .inner-wrapper  > h3 {
+    font-size: 32px;
+    line-height: 1;
+  }
+  & > .inner-wrapper > h4 {
+    font-size: 24px;
+    line-height: 1;
   }
 }
 
@@ -116,6 +181,9 @@ $projects-view-navbar-margin: 50px;
     width: 100%;
     margin: 20px 0;
   }
+  .projects-view-section > .inner-wrapper > .quarter-column {
+    width: 50%;
+  }
 }
 
 /* iPad Portrait */
@@ -130,10 +198,12 @@ $projects-view-navbar-margin: 50px;
 
 /* Mobile XL Portrait */
 @media (max-width: 425px) {
-  
+  .projects-view-section > .inner-wrapper > .quarter-column {
+    width: 100%;
+  }
 }
 
 /* Remove some paddings in extra small screens for more working area */
 @media (max-width: 375px) {
-
+  
 }
