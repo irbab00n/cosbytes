@@ -1,17 +1,45 @@
+@mixin spin ($time) {
+  -webkit-animation: spin $time linear infinite;
+  -moz-animation:    spin $time linear infinite;
+  animation:         spin $time linear infinite;
+  @-moz-keyframes    spin {
+    0% { -moz-transform: rotate(0deg);  }
+    100% { -moz-transform: rotate(360deg);  }
+  }
+  @-webkit-keyframes spin {
+    100% { -webkit-transform: rotate(0deg); } 
+    100% { -webkit-transform: rotate(360deg); } 
+  }
+  @keyframes         spin { 
+    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+  }
+}
+
+@mixin spin-back ($time) {
+  -webkit-animation: spin-back $time linear infinite;
+  -moz-animation:    spin-back $time linear infinite;
+  animation:         spin-back $time linear infinite;
+  @-moz-keyframes    spin-back { 100% { -moz-transform: rotate(-360deg); } }
+  @-webkit-keyframes spin-back { 100% { -webkit-transform: rotate(-360deg); } }
+  @keyframes         spin-back { 100% { -webkit-transform: rotate(-360deg); transform: rotate(-360deg); } }
+}
+
 .projects-banner {
   @include jumbotron-background;
   @include box-shadow(0px, 2.5px, 5px, 0px, rgba(25, 25, 25, 0.4));
-  position: relative;
+  // position: relative;s
   overflow: hidden;
   height: 700px;
   width: 100%;
 }
 
 .banner-container {
-  @include flex; @include flex-column;
-  position: absolute;
+  @include flex; @include flex-column; @include flex-wrap(no-wrap);
+  // position: absolute;
   height: 100%;
   width: 100%;
+  z-index: 100;
 }
 
 .banner-container > h1 {
@@ -23,7 +51,7 @@
   &.centered {
     // align-self: center;
     margin: auto;
-    margin-top: 300px;
+    margin-top: 200px;
   }
   &.white {
     color: $white;
@@ -56,43 +84,48 @@
   }
 }
 
-.projects-banner > i {
-  position: absolute;
+.projects-banner > span {
+  @include flex; @include align-center; @include justify-center;
+  height: 1px;
+  width: 1px;
+  overflow: visible;
   color: #1064A2;
   text-shadow: 0px 0px 3px rgba(25, 25, 25, 0.2);
 }
 
 #gear1 {
+  @include spin(4s);
   font-size: 500px;
-  top: -50px;
-  left: -70px;
+  // top: -50px;
+  // left: -70px;
   z-index: 50;
 }
 
 #gear2 {
+  @include spin-back(4s);
   font-size: 500px;
-  top: 350px;
-  left: 250px;
   z-index: 50;
-
 }
 
 #gear3 {
+  @include spin(4s);
   font-size: 500px;
-  top: 450px;
-  left: 680px;
+  // top: 450px;
+  // left: 680px;
   z-index: 50;
 
 }
 
 #gear4 {
+  @include spin(8s);
   font-size: 1000px;
-  top: 100px;
-  right: -400px;
+  // top: 100px;
+  // right: -400px;
   color: rgba(16, 95, 148, 1.0);
 }
 
 #gear5 {
+  @include spin-back(8s);
   font-size: 1000px;
   top: 200px;
   left: -400px;
@@ -118,10 +151,12 @@
 }
 
 .spin-back-slow {
-  -webkit-animation:spin-back 8s linear infinite;
-  -moz-animation:spin-back 8s linear infinite;
-  animation:spin-back 8s linear infinite;
+  -webkit-animation:  spin-back 8s linear infinite;
+  -moz-animation: spin-back 8s linear infinite;
+  animation:  spin-back 8s linear infinite;
 }
+
+
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
