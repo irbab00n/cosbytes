@@ -36,6 +36,15 @@
   }
 }
 
+.project-list-item-loading {
+  @include flex; @include align-center; @include justify-center;
+  position: absolute;
+  top: 64%;
+  left: 42%;
+  height: 0%;
+  width: 0%;
+}
+
 
 @media (max-width: 2560px) {
   .projects-list-item {

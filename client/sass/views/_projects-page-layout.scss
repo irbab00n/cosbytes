@@ -79,6 +79,7 @@ $projects-view-navbar-margin: 50px;
   @include flex; @include flex-column;
   @include transition(0.2s);
   width: 25%;
+  position: relative;
 
   & > .inner-wrapper {
     @include transition(0.2s);

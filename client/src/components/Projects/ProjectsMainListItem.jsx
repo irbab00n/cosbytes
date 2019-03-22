@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ImageLoading from '../ImageCarousel/ImageLoading';
+
 class ProjectsMainListItem extends React.Component {
   constructor(props) {
     super(props);
@@ -54,6 +56,9 @@ class ProjectsMainListItem extends React.Component {
         onMouseLeave={this.handleMouseLeave}
       >
         <div className="inner-wrapper">
+          <div className="project-list-item-loading">
+            <ImageLoading />
+          </div>
           <h4>{project.title}</h4>
           <div className="project-thumbnail-wrapper">
             <div className="image" style={
