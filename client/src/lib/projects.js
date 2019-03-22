@@ -30,7 +30,7 @@ module.exports = [
     ],
     slug: 'redoku',
     description: 'Redoku is my React-Redux implementation of one of my favorite quick-puzzle games.  This is an on-going project aimed at designing simple, responsive interface that I will connect into a custom score tracking back-end to deliver support for leaderboard like data tracking.',
-    overview: 'This website has served as not only a display center for who I am, but also what I am capable of as a software engineer'
+    overview: 'What started as a solution to a toy problem ended up as an online sudoku game powered by React and Redux'
   },
   /* ----- COSBYTES ----- */
   {
