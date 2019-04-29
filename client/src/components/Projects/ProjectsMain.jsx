@@ -14,6 +14,7 @@ class ProjectsMain extends React.Component {
     this.scrollToTargetId = this.scrollToTargetId.bind(this);
   }
 
+  /* Takes in an array of image icon tags, and returns the list of icons in image form */
   buildTechLabelImages(imageTags) {
     return imageTags.map((imageTag, index) => {
       return (
@@ -25,28 +26,27 @@ class ProjectsMain extends React.Component {
     });
   }
 
+  /* Pass in the ID of the element you want to scroll to */
   scrollToTargetId(id) {
     document.getElementById(id).scrollIntoView({
       behavior: 'smooth',
       block: 'start'
     });
   }
-  
 
   render() {
-
+    // Select my most recent project
     const mostRecent = projects[0];
+    // Select my favorite project
     const favorite = projects[1];
-    var videoLink = 'https://s3-us-west-1.amazonaws.com/cos-bytes.com/sea-cliffs.mp4';
 
     return (
-
       <section className="projects-view-wrapper">
+        {/* React Helmet page title */}
         <Helmet>
           <title>cosbytes | Projects | Home</title>
         </Helmet>
-
-        {/* Projects Banner */}
+        {/* Spinning Gear Banner */}
         <div className="projects-view-section cosbytes-blue">
           {/* <i id="gear1" className="fas fa-cog large spin"></i> */}
           <div className="projects-banner">
@@ -67,29 +67,28 @@ class ProjectsMain extends React.Component {
             </div>
           </div>
         </div>
-
+        {/* MOST RECENT PROJECT SECTION */}
         <ProjectsMainSection
           callToAction={'See what I\'ve been up to'}
           project={mostRecent}
           sectionId={'most-recent'}
         />
-
+        {/* PERSONAL FAVORITE PROJECT SECTION */}
         <ProjectsMainSection
           callToAction={'My Personal Favorite'}
           project={favorite}
           sectionId={'personal-favorite'}
         />
-
+        {/* LIST OF PROJECTS SCROLL TARGET */}
         <div id="full-list" className="projects-view-section">
           <div className="inner-wrapper">
             <div className="full-column most-recent-navigation">
               <i className="fas fa-arrow-circle-down most-recent-navigation-arrow" onClick={() => this.scrollToTargetId('full-list')}></i>
               <h4 className="center" onClick={() => this.scrollToTargetId('full-list')}>My Full list of projects</h4>
             </div>
-            <h1></h1>
-          </div>  
+          </div>
         </div>
-
+        {/* LIST OF PROJECTS ACTUAL LIST */}
         <div className="projects-view-section">
           <div className="inner-wrapper">
             {
@@ -102,15 +101,13 @@ class ProjectsMain extends React.Component {
             }
           </div>
         </div>
-
+        {/* PAGE BOTTOM SPACER */}
         <div className="projects-view-section">
           <div className="spacer-element-20"></div>
           <div className="spacer-element-20"></div>
         </div>
       </section>
-
     );
-
   }
 }
 

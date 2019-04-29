@@ -2,25 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import ImageCarousel from '../ImageCarousel';
-
-import stackImages from '../../lib/stackImages';
+import ProjectTechLabelList from './ProjectTechLabelList';
 
 class ProjectMainSection extends React.Component {
   constructor(props) {
     super(props);
-    this.buildTechLabelImages = this.buildTechLabelImages.bind(this);
     this.scrollToTargetId = this.scrollToTargetId.bind(this);
-  }
-
-  buildTechLabelImages(imageTags) {
-    return imageTags.map((imageTag, index) => {
-      return (
-        <li key={`tech-label-image-${index}`}>
-          {/* Look up the tag in the image cache, pull out the url, set as img src */}
-          <label title={imageTag}><img src={stackImages[imageTag]}/></label>
-        </li>
-      );
-    });
   }
 
   scrollToTargetId(id) {
@@ -44,11 +31,9 @@ class ProjectMainSection extends React.Component {
           <div className="half-column">
             <div className="inner-wrapper">
               <h2>{project.title}</h2>
-              <ul className="project-tech-wrapper">
-                {
-                  this.buildTechLabelImages(project.stack)
-                }
-              </ul>
+              <ProjectTechLabelList
+                imageTags={project.stack}
+              />
               <div className="project-description-wrapper">
                 {project.overview}
               </div>
