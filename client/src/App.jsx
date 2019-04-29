@@ -6,8 +6,6 @@ import Blog from './views/Blog.jsx';
 import Main from './views/Main.jsx';
 import Projects from './views/Projects.jsx';
 
-import Navbar from './components/Navbar';
-
 import '../sass/main.scss';
 
 /* Make application history available as an export */
