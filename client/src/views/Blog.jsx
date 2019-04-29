@@ -7,6 +7,7 @@ import dispatchMappedActions from '../redux/dispatchMappedActions';
 import BlogMain from '../components/Blog/BlogMain';
 import BlogList from '../components/Blog/BlogList';
 import BlogPost from '../components/Blog/BlogPost';
+import Navbar from '../components/Navbar';
 
 class Blog extends React.Component { 
   constructor(props) {
@@ -23,6 +24,7 @@ class Blog extends React.Component {
 
     return (
       <main className="blog-page-layout">
+        <Navbar />
         <Switch>
           <Route exact path={match.url} component={BlogMain} />
           <Route path={`${match.url}/p/:page`}  component={BlogList} />

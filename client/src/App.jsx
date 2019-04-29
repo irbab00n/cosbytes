@@ -22,7 +22,6 @@ export default class App extends React.Component {
 
     return (
       <div id="application-wrapper">
-        <Navbar />
         <Router history={hist}>
           <Switch>
             <Route exact path="/" component={Main}/>

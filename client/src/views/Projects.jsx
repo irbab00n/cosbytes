@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 
 import Footer from '../components/Footer/';
+import Navbar from '../components/Navbar';
 import ProjectsMain from '../components/Projects/ProjectsMain';
 
 class Projects extends React.Component { 
@@ -17,6 +18,7 @@ class Projects extends React.Component {
 
     return (
       <main className="project-page-layout">
+        <Navbar />
         <Switch>
           <Route exact path={match.url} component={ProjectsMain} />
           <Route path={`${match.url}/project/:project`} component={ProjectsMain} />
