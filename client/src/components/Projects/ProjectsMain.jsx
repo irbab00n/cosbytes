@@ -3,7 +3,8 @@ import { Helmet } from "react-helmet";
 import { Link } from 'react-router-dom';
 
 import ProjectSectionScrollTarget from './ProjectSectionScrollTarget';
-import ProjectsMainListItem from './ProjectsMainListItem';
+import ProjectsMainProjectListItem from './ProjectsMainProjectListItem';
+import ProjectsMainProjectList from './ProjectsMainProjectList';
 import ProjectsMainSection from './ProjectsMainSection';
 import SpinningGearBanner from './SpinningGearBanner';
 
@@ -33,22 +34,9 @@ const ProjectsMain = (props) => (
       sectionId={'personal-favorite'}
     />
     {/* LIST OF PROJECTS */}
-    <div id="full-list" className="projects-view-section">
-      <div className="inner-wrapper">
-        <ProjectSectionScrollTarget
-          callToAction={'My Full list of projects'}
-          sectionId={'full-list'}
-        />
-        {
-          projects.map((project, index) => (
-            <ProjectsMainListItem
-              key={`project-list-item-${index}`}
-              project={project}
-            />
-          ))
-        }
-      </div>
-    </div>
+    <ProjectsMainProjectList
+      projects={projects}
+    />
     {/* PAGE BOTTOM SPACER */}
     <div className="projects-view-section">
       <div className="spacer-element-20"></div>
