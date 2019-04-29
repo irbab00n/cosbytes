@@ -1,9 +1,6 @@
 import React from 'react';
 import { Helmet } from "react-helmet";
-import { Link } from 'react-router-dom';
 
-import ProjectSectionScrollTarget from './ProjectSectionScrollTarget';
-import ProjectsMainProjectListItem from './ProjectsMainProjectListItem';
 import ProjectsMainProjectList from './ProjectsMainProjectList';
 import ProjectsMainSection from './ProjectsMainSection';
 import SpinningGearBanner from './SpinningGearBanner';
