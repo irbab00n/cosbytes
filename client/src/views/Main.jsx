@@ -5,24 +5,14 @@ import Jumbotron from '../components/Jumbotron/';
 import Navbar from '../components/Navbar';
 import SkillCarousel from '../components/SkillCarousel/';
 
-import skills from '../lib/skills';
+import skills from '../lib/skills'; // Skills repository
 
-const Home = (props) => (
+const Home = () => (
   <main className="main-page-layout">
-
     <Navbar />
-
-    {/* Jumbotron */}
     <Jumbotron />
-
-    {/* Skill Carousel */}
-    <SkillCarousel
-      skills={skills}
-    />
-    
+    <SkillCarousel skills={skills} />
     <Footer />
-
-
   </main>
 );
 

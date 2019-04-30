@@ -25,6 +25,11 @@ const setBlogCurrentPostAction = (post) => ({
   }
 });
 
+
+/* SET BLOG CURRENT POST ERROR ACTION CREATOR */
+export const setBlogCurrentPostError = (flag) => {
+  return dispatch => dispatch(setBlogCurrentPostErrorAction(flag));
+};
 /* SET BLOG CURRENT POST ERROR ACTION */
 const setBlogCurrentPostErrorAction = (flag) => ({
   type: types.SET_BLOG_CURRENT_POST_ERROR,
