@@ -33,7 +33,7 @@ $image-container-control-width-1024: 60px;
 }
 
 .image-container {
-  @include transition(0.3s);
+  // @include transition(0.3s);
   @include flex; @include flex-column; @include align-center;
   cursor: zoom-in;
   border-radius: 4px;
@@ -58,7 +58,7 @@ $image-container-control-width-1024: 60px;
 }
 
 .image-container-image {
-  @include transition(0.4s);
+  // @include transition(0.4s);
   @include flex;
   position: absolute;
   height: 100%;
@@ -87,7 +87,7 @@ $image-container-control-width-1024: 60px;
 
 .image-dot-container > li {
   display: inline-block;
-  @include transition(0.2s);
+  // @include transition(0.2s);
   cursor: pointer;
   background-color: $blue-grey-400;
   border: 1px solid $blue-grey-300; border-radius: 50%;

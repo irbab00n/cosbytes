@@ -3,6 +3,7 @@ import { Redirect, Route, Switch } from 'react-router';
 
 import Footer from '../components/Footer/';
 import Navbar from '../components/Navbar';
+import CurrentProject from '../components/Projects/CurrentProject';
 import ProjectsMain from '../components/Projects/ProjectsMain';
 
 const Projects = (props) => (
@@ -10,8 +11,8 @@ const Projects = (props) => (
     <Navbar />
     <Switch>
       <Route exact path={props.match.url} component={ProjectsMain} />
-      <Route path={`${props.match.url}/project/:project`} component={ProjectsMain} />
-      <Route render={() => (<Redirect to={props.match.url}/>)} />
+      <Route path={`${props.match.url}/project/:project`} component={CurrentProject} />
+      <Route render={() => <Redirect to={props.match.url} />} />
       {/* <Route path={`${match.url}/tag/:tag`}  component={BlogList} /> */}
 
       {/* <Route path={`${match.url}/post/:slug`} component={BlogPost} /> */}

@@ -47,6 +47,10 @@ $projects-view-navbar-margin: 50px;
   @include flex; @include flex-column;
   width: 100%;
   
+
+  & > .inner-wrapper {
+    margin: auto 20px;
+  }
 }
 
 .projects-view-section > .inner-wrapper > .half-column {
@@ -55,6 +59,10 @@ $projects-view-navbar-margin: 50px;
 
   & > .inner-wrapper {
     margin: auto 20px;
+
+    &.anchor-right {
+      margin-left: auto;
+    }
   }
 
   & > .inner-wrapper > h1 {
@@ -79,6 +87,7 @@ $projects-view-navbar-margin: 50px;
   @include flex; @include flex-column;
   @include transition(0.2s);
   width: 25%;
+  color: $black;
   position: relative;
 
   & > .inner-wrapper {
@@ -86,7 +95,7 @@ $projects-view-navbar-margin: 50px;
     cursor: pointer;
     border-radius: 4px;
     height: 300px;
-    margin: 15px;
+    margin: 20px;
     padding: 10px;
 
     &:hover {
@@ -114,6 +123,7 @@ $projects-view-navbar-margin: 50px;
     line-height: 1;
   }
   & > .inner-wrapper > h4 {
+    margin: 20px;
     font-size: 24px;
     line-height: 1;
   }

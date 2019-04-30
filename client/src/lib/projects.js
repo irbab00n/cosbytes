@@ -90,6 +90,7 @@ module.exports = [
       'Webpack',
       'Heroku'
     ],
+    slug: 'note-app',
     description: 'This application allowed me to practice building a responsive grid layout containing reusable note card components that you can change and update.  This was also a great exercise to practice building functionality into a form to enrich the user experience.  One example is being able to prevent a blank card from being created by detecting whether the user has added a title and/or note body has any content added.  It was a great experience also working with in-line CSS-in-JS styling to create event-based animations to trigger.',
     overview: 'My take on the note-taking/making app built in React featuring CSS-in-JS styling'
   },
@@ -118,6 +119,7 @@ module.exports = [
       'Webpack',
       'Heroku'
     ],
+    slug: 'trainer-finder',
     description: 'TrainerFinder was my Hack Reactor Thesis project.  The main challenge of our thesis was to use a starter repo designed to simulate an in-progress codebase and build our product on top of it.  I converted the server-side rendering into a React client that featured multi-tier user types to create a platform for personal trainers to create and manage their clients, appointments, and payments.  My team and I also designed a system for clients to rate and review trainers to provide more visualization to potential customers.',
     overview: 'A platform for personal trainers to operate their businesses and meet clients'
   },
@@ -145,6 +147,7 @@ module.exports = [
       'Webpack',
       'Heroku'
     ],
+    slug: 'vagabondly',
     description: 'This project was what is considered the Hack Reactor "Legacy" project.  Legacy meaning that we inherited the codebase from another team within the cohort, and given one week to improve the application and implement a new feature.  Right away, my team and I identified that we could improve the user interface by making the trip planning process more linear by introducing a step-by-step trip creator.  This allowed us to display more information to the user, allow them to filter by price, and see a map view of where the attractions are in their destination city.',
     overview: 'A trip curation and exploration application'
   },
@@ -171,6 +174,7 @@ module.exports = [
       'Webpack',
       'Heroku'
     ],
+    slug: 'scheggie',
     description: 'This application allowed me to practice building a responsive grid layout containing reusable note card components that you can change and update.  This was also a great exercise to practice building functionality into a form to enrich the user experience.  One example is being able to prevent a blank card from being created by detecting whether the user has added a title and/or note body has any content added.  It was a great experience also working with in-line CSS-in-JS styling to create event-based animations to trigger.',
     overview: 'My take on the note-taking/making app built in React featuring CSS-in-JS styling'
   },
@@ -193,6 +197,7 @@ module.exports = [
       'Express',
       'MongoDB',
     ],
+    slug: 'drop-shippit',
     description: `The Hack Reactor MVP project, a 48 hour challenge to build a full-stack application that featured the usage of a front-end framework and how to build small back-end micro-services that persisted data in database.  DropShippit was an app I created to potentially identify arbitrage opportunities between similar items listed on Dollar Tree and Amazon.`,
     overview: `The result of a 48 hour challenege designed at exercising our ability to build full-stack applications`
   },
@@ -215,6 +220,7 @@ module.exports = [
       'jQuery',
       'Heroku'
     ],
+    slug: 'jquery-dance-party',
     description: `This was a side-project I worked on in parallel with an assignment at Hack Reactor.  The task was to combine the DOM manipulation of jQuery with prototypal inheritance to create a group of dancing/animated elements on the page.  As I was tinkering around with CSS animations, I created a bobbing animation that instantly reminded me of Night at the Roxbury.`,
     overview: `jQuery combined with prototypal inheritance techniques to produce a 'dance floor' of elements on the page`
   },
@@ -242,6 +248,7 @@ module.exports = [
       'Express',
       'Heroku'
     ],
+    slug: 'particles',
     description: 'After an introduction to Three.js and WebGL, I came across Particles.js.  It\'s a simple library that you can use to quickly create an interactive feature in your web application.  It inspired me to try building a small web app that would also be a practice in creating mobile responsive layouts through CSS classes.  In the process, I had an idea to create a dynamic simulated scroll target menu that will change depending on the number of content sections you build into your website.',
     overview: 'For this project, I integrated the Particles.js library with my own custom JavaScript code to create a very simple user interface'
   }

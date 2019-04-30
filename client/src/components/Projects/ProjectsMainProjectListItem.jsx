@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import ImageLoading from '../ImageCarousel/ImageLoading';
 
@@ -51,10 +52,12 @@ class ProjectsMainListItem extends React.Component {
     const { project } = this.props;
 
     return (
-      <div className="quarter-column"
+      <Link
+        to={`projects/project/${project.slug}`}
+        className="quarter-column"
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
-      >
+      >  
         <div className="inner-wrapper">
           <div className="project-list-item-loading">
             <ImageLoading />
@@ -68,7 +71,7 @@ class ProjectsMainListItem extends React.Component {
             }/>
           </div>
         </div>
-      </div>
+      </Link>
     )
   }
 }
